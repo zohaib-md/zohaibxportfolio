@@ -45,18 +45,21 @@ body {
 
 /* daisyUI-based Neo Buttons & Badges */
 .btn-neo {
-  @apply btn normal-case font-display font-bold text-black border-[3px] border-black transition-all duration-150;
-  box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.9);
+  @apply btn normal-case font-display font-bold text-black border-[3px] border-black transition-all duration-100;
+  box-shadow: 5px 5px 0 0 #000000;
+  transform: translate(0, 0);
 }
 
 .btn-neo:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 0 rgba(0, 0, 0, 0.9);
+  transform: translate(3px, 3px) !important;
+  box-shadow: 2px 2px 0 0 #000000 !important;
+  filter: none !important;
 }
 
 .btn-neo:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.9);
+  transform: translate(5px, 5px) !important;
+  box-shadow: 0px 0px 0 0 #000000 !important;
+  filter: none !important;
 }
 
 .btn-neo-sm {
@@ -72,6 +75,26 @@ body {
 .btn-neo-sm:active {
   transform: translate(1.5px, 1.5px);
   box-shadow: 1.5px 1.5px 0 0 rgba(0, 0, 0, 0.9);
+}
+
+.btn-neo-circle {
+  @apply btn btn-circle btn-sm w-9 h-9 min-h-[36px] !bg-white border-[2.5px] border-black text-black p-0 flex items-center justify-center overflow-hidden transition-all duration-100;
+  box-shadow: 3px 3px 0 0 #000000;
+  transform: translate(0, 0);
+}
+
+.btn-neo-circle:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0 0 #000000 !important;
+  background-color: #ffffff !important;
+  filter: none !important;
+}
+
+.btn-neo-circle:active {
+  transform: translate(3px, 3px) !important;
+  box-shadow: 0px 0px 0 0 #000000 !important;
+  background-color: #ffffff !important;
+  filter: none !important;
 }
 
 .badge-neo {

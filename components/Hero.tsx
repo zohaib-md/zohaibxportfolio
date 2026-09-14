@@ -159,7 +159,7 @@ export const Hero: React.FC = () => {
             {/* Primary CTA (Hire Me) */}
             <Link
               href={personalData.hireLink}
-              className="btn-neo w-full sm:w-auto !bg-[#facc15] hover:!bg-[#eab308] border-[3px] border-black rounded-xl px-7 py-3 text-base font-display font-bold shadow-[5px_5px_0_0_#000000] flex items-center justify-center gap-2"
+              className="btn-neo w-full sm:w-auto !bg-[#facc15] hover:!bg-[#facc15] active:!bg-[#facc15] border-[3px] border-black rounded-xl px-7 py-3 text-base font-display font-bold flex items-center justify-center gap-2"
             >
               Hire Me
               <span className="text-sm font-bold">→</span>
@@ -168,7 +168,7 @@ export const Hero: React.FC = () => {
             {/* Secondary CTA (See My Work) */}
             <Link
               href={personalData.workLink}
-              className="btn-neo w-full sm:w-auto !bg-white hover:!bg-neutral-100 border-[3px] border-black rounded-xl px-7 py-3 text-base font-display font-bold shadow-[5px_5px_0_0_#000000] flex items-center justify-center gap-2"
+              className="btn-neo w-full sm:w-auto !bg-white hover:!bg-white active:!bg-white border-[3px] border-black rounded-xl px-7 py-3 text-base font-display font-bold flex items-center justify-center gap-2"
             >
               See My Work
               <span className="text-sm font-bold">→</span>
