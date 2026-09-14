@@ -121,7 +121,7 @@ export const ProjectTimeline: React.FC = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative w-full overflow-hidden border-b-[3.5px] border-black bg-[#fef3c7] py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+      className="relative w-full overflow-hidden border-b-[3.5px] border-black bg-[#fef18b] py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
     >
       {/* Background Dot Grid Pattern matching hero */}
       <div className="absolute inset-0 neo-dot-grid pointer-events-none" />
@@ -164,10 +164,10 @@ export const ProjectTimeline: React.FC = () => {
               Timeline
             </span>
 
-            {/* Cream/Off-White Box: of Builds */}
+            {/* White Box: of Builds */}
             <span
               ref={titleBox2Ref}
-              className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-[#FAF9F6] px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000]"
+              className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-white px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000]"
             >
               of Builds
             </span>

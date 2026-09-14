@@ -5,7 +5,7 @@ import { ProjectTimeline } from "@/components/ProjectTimeline";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fef3c7]">
+    <main className="min-h-screen bg-[#fef18b]">
       <Navbar />
       <Hero />
       <TimelineSection />
