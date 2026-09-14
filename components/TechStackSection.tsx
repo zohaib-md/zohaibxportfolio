@@ -15,7 +15,7 @@ export interface TechItem {
 }
 
 export const techStack: TechItem[] = [
-  { name: "Kotlin", iconPath: "/tech-logos/kotlin.svg" },
+  { name: "Kotlin", iconPath: "/tech-logos/kotlin.webp" },
   { name: "Python", iconPath: "/tech-logos/python.svg" },
   { name: "TypeScript", iconPath: "/tech-logos/typescript.svg" },
   { name: "JavaScript", iconPath: "/tech-logos/javascript.svg" },
@@ -31,14 +31,14 @@ export const techStack: TechItem[] = [
   { name: "Hilt", iconPath: "/tech-logos/android.svg" },
   { name: "CameraX", iconPath: "/tech-logos/android.svg" },
 
-  { name: "Firebase", iconPath: "/tech-logos/firebase.svg" },
+  { name: "Firebase", iconPath: "/tech-logos/firebase.png" },
   { name: "Django", iconPath: "/tech-logos/django.svg" },
   { name: "Laravel", iconPath: "/tech-logos/laravel.svg" },
   { name: "Vue 3", iconPath: "/tech-logos/vue-3.svg" },
   { name: "Next.js", iconPath: "/tech-logos/next-js.svg" },
   { name: "React", iconPath: "/tech-logos/react.svg" },
   { name: "Tailwind CSS", iconPath: "/tech-logos/tailwind-css.svg" },
-  { name: "PostgreSQL", iconPath: "/tech-logos/postgresql.svg" },
+  { name: "PostgreSQL", iconPath: "/tech-logos/postgresql.webp" },
   { name: "MySQL", iconPath: "/tech-logos/mysql.svg" },
   { name: "SQLite", iconPath: "/tech-logos/sqlite.svg" },
   { name: "Docker", iconPath: "/tech-logos/docker.svg" },
