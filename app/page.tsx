@@ -2,6 +2,8 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TimelineSection } from "@/components/TimelineSection";
 import { ProjectTimeline } from "@/components/ProjectTimeline";
+import { ProductsSection } from "@/components/ProductsSection";
+import { WebDesignCTA } from "@/components/WebDesignCTA";
 
 export default function Home() {
   return (
@@ -10,6 +12,9 @@ export default function Home() {
       <Hero />
       <TimelineSection />
       <ProjectTimeline />
+      <ProductsSection />
+      {/* Web Design CTA section (ready to activate when services are offered) */}
+      {/* <WebDesignCTA /> */}
     </main>
   );
 }
