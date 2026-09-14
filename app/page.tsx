@@ -6,6 +6,7 @@ import { ProductsSection } from "@/components/ProductsSection";
 import { WebDesignCTA } from "@/components/WebDesignCTA";
 import { CallbackSection } from "@/components/CallbackSection";
 import { TechStackSection } from "@/components/TechStackSection";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WebDesignCTA />
       <CallbackSection />
       <TechStackSection />
+      <Footer />
     </main>
   );
 }
