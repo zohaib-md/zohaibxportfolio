@@ -7,6 +7,8 @@ import { personalData } from "@/lib/data";
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const [activeLink, setActiveLink] = useState("Home");
+
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Floating Pill Nav Container */}
@@ -28,16 +30,24 @@ export const Navbar: React.FC = () => {
 
         {/* Center-Right: Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-2.5">
-          {personalData.navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              style={{ backgroundColor: link.bg }}
-              className="btn btn-sm h-auto py-1.5 px-3.5 border-[2.5px] border-black rounded-xl font-display font-bold text-xs sm:text-sm text-black shadow-[3px_3px_0_0_#000000] hover:-translate-y-1 hover:shadow-[4px_4px_0_0_#000000] active:translate-y-0.5 active:shadow-[1px_1px_0_0_#000000] transition-all normal-case"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {personalData.navLinks.map((link) => {
+            const isActive = activeLink === link.label;
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setActiveLink(link.label)}
+                style={{ backgroundColor: link.bg }}
+                className={`inline-flex items-center justify-center h-auto py-1.5 px-3.5 border-[2.5px] border-black rounded-xl font-display font-bold text-xs sm:text-sm text-black transition-all duration-150 select-none ${
+                  isActive
+                    ? "-translate-y-0.5 shadow-[3.5px_3.5px_0_0_#000000]"
+                    : "translate-y-0 shadow-none hover:-translate-y-0.5 hover:shadow-[3.5px_3.5px_0_0_#000000] hover:underline"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Far Right: Circular Social Icons & Mobile Toggle */}
@@ -88,7 +98,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden btn btn-square btn-sm w-9 h-9 min-h-[36px] bg-white border-[2.5px] border-black text-black shadow-[3px_3px_0_0_#000000] hover:bg-neutral-100 p-0 flex items-center justify-center"
+            className="lg:hidden btn-neo-circle !rounded-xl"
             aria-label="Toggle mobile menu"
           >
             <svg width="20" height="20" className="w-5 h-5 max-w-[20px] max-h-[20px] stroke-current" fill="none" viewBox="0 0 24 24">
@@ -105,17 +115,27 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden mt-3 w-full bg-[#fde68a] border-[3.5px] border-black rounded-2xl shadow-[6px_6px_0_0_#000000] p-4 flex flex-col gap-2.5 animate-fadeIn">
-          {personalData.navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ backgroundColor: link.bg }}
-              className="btn btn-sm w-full border-[2.5px] border-black rounded-xl font-display font-bold text-sm text-black shadow-[3px_3px_0_0_#000000] justify-center normal-case"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {personalData.navLinks.map((link) => {
+            const isActive = activeLink === link.label;
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => {
+                  setActiveLink(link.label);
+                  setMobileMenuOpen(false);
+                }}
+                style={{ backgroundColor: link.bg }}
+                className={`w-full py-2 px-4 border-[2.5px] border-black rounded-xl font-display font-bold text-sm text-black flex items-center justify-center transition-all duration-150 ${
+                  isActive
+                    ? "-translate-y-0.5 shadow-[3.5px_3.5px_0_0_#000000]"
+                    : "translate-y-0 shadow-none hover:-translate-y-0.5 hover:shadow-[3.5px_3.5px_0_0_#000000] hover:underline"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </header>
