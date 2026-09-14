@@ -5,6 +5,7 @@ import { ProjectTimeline } from "@/components/ProjectTimeline";
 import { ProductsSection } from "@/components/ProductsSection";
 import { WebDesignCTA } from "@/components/WebDesignCTA";
 import { CallbackSection } from "@/components/CallbackSection";
+import { TechStackSection } from "@/components/TechStackSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ProductsSection />
       <WebDesignCTA />
       <CallbackSection />
+      <TechStackSection />
     </main>
   );
 }
