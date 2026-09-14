@@ -19,6 +19,8 @@ export interface TimelineEntry {
   organization: string;
   location: string;
   dateRange: string;
+  dateRangeFormatted?: string;
+  projectCount?: string;
   dotColor: string;
   bgColor: string;
   bullets?: string[];
@@ -59,6 +61,8 @@ export const personalData = {
       organization: "Hyperzod",
       location: "Lucknow, India (On-site)",
       dateRange: "June 2026 - Present",
+      dateRangeFormatted: "June 2026 → Present",
+      projectCount: "1 Project",
       dotColor: "#EC4899",
       bgColor: "#FFE4EF",
       bullets: [
@@ -78,6 +82,8 @@ export const personalData = {
       organization: "LettrBlack",
       location: "Bengaluru, India (Remote)",
       dateRange: "Feb 2026 - Jul 2026",
+      dateRangeFormatted: "Feb 2026 → Jul 2026",
+      projectCount: "1 Project",
       dotColor: "#F97316",
       bgColor: "#FFF4EC",
       bullets: [
@@ -99,6 +105,8 @@ export const personalData = {
       organization: "Innovative Technology Ltd",
       location: "England, United Kingdom (Remote)",
       dateRange: "September 2025 - October 2025",
+      dateRangeFormatted: "Sep 2025 → Oct 2025",
+      projectCount: "1 Project",
       dotColor: "#8B5CF6",
       bgColor: "#F3E8FF",
       bullets: [
@@ -114,6 +122,8 @@ export const personalData = {
       organization: "AKGEC",
       location: "Ghaziabad, Delhi NCR, India",
       dateRange: "Aug 2022 - Jun 2026",
+      dateRangeFormatted: "Aug 2022 → Jun 2026",
+      projectCount: "AKGEC",
       dotColor: "#EC4899",
       bgColor: "#FFEEF8",
       bullets: [
