@@ -214,7 +214,7 @@ export const personalData = {
     },
     {
       id: "expectr",
-      title: "Expectr (ZorvynOne)",
+      title: "Expectr",
       year: "2026",
       techSummary: "Kotlin · Jetpack Compose · Gemini API · SQLite",
       techList: ["Kotlin", "Jetpack Compose", "Gemini API", "SQLite"],
