@@ -81,7 +81,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
     <div
       onClick={onToggle}
       style={{ backgroundColor: bgColor }}
-      className="group relative cursor-pointer select-none rounded-[20px] md:rounded-[24px] border-[3.5px] border-black p-5 sm:p-6 md:p-7 shadow-[5px_5px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[7px_7px_0_0_#000000]"
+      className="group relative cursor-pointer select-none w-full max-w-[1104px] min-h-[110px] rounded-[20px] md:rounded-[24px] border-[3.5px] border-black p-6 sm:p-7 md:p-[32px] shadow-[5px_5px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[7px_7px_0_0_#000000] flex flex-col justify-center"
       role="button"
       tabIndex={0}
       aria-expanded={isExpanded}
@@ -94,8 +94,8 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
     >
       {/* Collapsed Header View */}
       {!isExpanded && (
-        <div className="flex items-center justify-between gap-4">
-          <h3 className="font-display text-2xl sm:text-[28px] md:text-3xl font-extrabold text-black tracking-tight">
+        <div className="flex items-center justify-between gap-4 w-full">
+          <h3 className="font-display text-[26px] sm:text-[30px] md:text-[34px] font-extrabold text-black tracking-tight leading-tight">
             {title}
           </h3>
 
@@ -107,11 +107,11 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                 onToggle();
               }}
               aria-label="Expand"
-              className="flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
               <span ref={chevronRef} className="inline-block leading-none text-xs md:text-sm text-black">
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

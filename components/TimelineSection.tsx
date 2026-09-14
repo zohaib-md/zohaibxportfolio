@@ -113,16 +113,17 @@ export const TimelineSection: React.FC = () => {
       ref={sectionRef}
       className="relative w-full border-t-[2.5px] sm:border-t-[3px] border-b-[3.5px] border-black bg-white py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-[1152px]">
         {/* Section Header */}
         <div ref={headerRef} className="mb-14 sm:mb-16 md:mb-20 text-center">
-          <h2 className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-black tracking-tight">
-            <span ref={titleExpRef} className="inline-block">
+          <h2 className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 font-display text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
+            <span ref={titleExpRef} className="inline-block leading-none">
               Experience
             </span>
             <span
               ref={badgeEduRef}
-              className="inline-block rounded-[14px] border-[3.5px] border-black bg-[#facc15] px-4 py-1.5 sm:px-5 sm:py-2 text-black shadow-[4px_4px_0_0_#000000] md:shadow-[5px_5px_0_0_#000000]"
+              className="inline-block rounded-[14px] md:rounded-[16px] border-[3px] md:border-[3.5px] border-black bg-[#FACC15] text-black shadow-[4px_4px_0_0_#000000] md:shadow-[5px_5px_0_0_#000000] leading-none whitespace-nowrap"
+              style={{ padding: "4px 8px" }}
             >
               &amp; Education
             </span>
@@ -135,37 +136,37 @@ export const TimelineSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Timeline Structure */}
-        <div className="relative mx-auto max-w-4xl">
+        {/* Timeline Structure (1152px total width: 48px rail + 1104px card) */}
+        <div className="relative mx-auto max-w-[1152px] w-full">
           {/* Vertical Timeline Rail Line */}
           <div
-            className="timeline-rail-line absolute bottom-7 top-7 z-0 w-[3px] bg-black"
-            style={{ left: "1.25rem" }}
+            className="timeline-rail-line absolute bottom-[55px] top-[55px] z-0 w-[3px] bg-black"
+            style={{ left: "22.5px" }}
           />
 
-          {/* Timeline Entries */}
-          <div className="relative z-10 space-y-7 sm:space-y-8 md:space-y-9">
+          {/* Timeline Entries (40px padding-bottom per row) */}
+          <div className="relative z-10">
             {timelineItems.map((item) => {
               const isExpanded = expandedIds.has(item.id);
 
               return (
                 <div
                   key={item.id}
-                  className="timeline-item-row relative flex items-start gap-4 sm:gap-6 md:gap-7"
+                  className="timeline-item-row relative flex items-start w-full pb-[40px] last:pb-0"
                 >
-                  {/* Circular Dot Marker on the Timeline Line */}
-                  <div className="relative z-10 flex w-10 flex-shrink-0 items-center justify-center pt-6 sm:pt-7">
+                  {/* Left Rail Column: 48px wide with 24px Dot Marker vertically centered on 110px card */}
+                  <div className="relative z-10 flex w-[48px] flex-shrink-0 items-start justify-center pt-[43px]">
                     <button
                       type="button"
                       onClick={() => toggleEntry(item.id)}
                       aria-label={`Toggle ${item.title}`}
                       style={{ backgroundColor: item.dotColor }}
-                      className="h-5 w-5 sm:h-6 sm:w-6 rounded-full border-[3px] border-black shadow-[3px_3px_0_0_#000000] transition-transform duration-150 hover:scale-110 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                      className="h-6 w-6 rounded-full border-[3px] border-black shadow-[3px_3px_0_0_#000000] transition-transform duration-150 hover:scale-110 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                     />
                   </div>
 
-                  {/* Card to the right of the timeline */}
-                  <div className="min-w-0 flex-1">
+                  {/* Right Column: 1104px Max-Width Card */}
+                  <div className="min-w-0 flex-1 max-w-[1104px]">
                     <TimelineCard
                       {...item}
                       isExpanded={isExpanded}
