@@ -43,25 +43,25 @@ export const Footer: React.FC = () => {
               <div className="flex flex-col gap-2.5">
                 <Link
                   href="#"
-                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
+                  className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Home
                 </Link>
                 <Link
                   href="#blog"
-                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
+                  className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Blog
                 </Link>
                 <Link
                   href="#hire"
-                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
+                  className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Hire Me
                 </Link>
                 <Link
                   href="#contact"
-                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
+                  className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Get in Touch
                 </Link>
@@ -71,19 +71,19 @@ export const Footer: React.FC = () => {
               <div className="flex flex-col gap-2.5">
                 <Link
                   href="#projects"
-                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
+                  className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Projects
                 </Link>
                 <Link
                   href="#products"
-                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
+                  className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Products
                 </Link>
                 <Link
                   href="#design"
-                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
+                  className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Web Design
                 </Link>
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
               CONNECT
             </span>
 
-            {/* Row of 3 circular social icon buttons: LinkedIn, GitHub, X (dark theme version) */}
+            {/* Row of 3 social icon buttons: LinkedIn, GitHub, X (white hover) */}
             <div className="flex items-center gap-2.5">
               {/* LinkedIn */}
               <a
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-full border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-white hover:border-[#FACC15] hover:text-[#FACC15] hover:bg-neutral-800 transition-all duration-150"
+                className="w-10 h-10 rounded-xl border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-neutral-300 hover:border-white hover:text-white hover:bg-neutral-800 transition-all duration-150"
               >
                 <svg
                   width="16"
@@ -123,7 +123,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="w-10 h-10 rounded-full border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-white hover:border-[#FACC15] hover:text-[#FACC15] hover:bg-neutral-800 transition-all duration-150"
+                className="w-10 h-10 rounded-xl border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-neutral-300 hover:border-white hover:text-white hover:bg-neutral-800 transition-all duration-150"
               >
                 <svg
                   width="18"
@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
-                className="w-10 h-10 rounded-full border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-white hover:border-[#FACC15] hover:text-[#FACC15] hover:bg-neutral-800 transition-all duration-150"
+                className="w-10 h-10 rounded-xl border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-neutral-300 hover:border-white hover:text-white hover:bg-neutral-800 transition-all duration-150"
               >
                 <svg
                   width="15"
