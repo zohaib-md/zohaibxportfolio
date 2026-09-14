@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
+import React from "react";
 
 export interface TimelineCardProps {
   id: string;
@@ -34,170 +33,6 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
   onToggle,
   children,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const collapsedWrapperRef = useRef<HTMLDivElement>(null);
-  const expandedWrapperRef = useRef<HTMLDivElement>(null);
-  const collapsedChevronRef = useRef<HTMLSpanElement>(null);
-  const expandedChevronRef = useRef<HTMLSpanElement>(null);
-  const isInitialMount = useRef(true);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const collapsedEl = collapsedWrapperRef.current;
-    const expandedEl = expandedWrapperRef.current;
-    const collapsedChev = collapsedChevronRef.current;
-    const expandedChev = expandedChevronRef.current;
-
-    if (!container || !collapsedEl || !expandedEl) return;
-
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      if (isExpanded) {
-        gsap.set(container, { height: "auto", overflow: "visible" });
-        gsap.set(collapsedEl, { display: "none", opacity: 0 });
-        gsap.set(expandedEl, { display: "block", position: "relative", opacity: 1 });
-        if (collapsedChev) gsap.set(collapsedChev, { rotation: 180 });
-        if (expandedChev) gsap.set(expandedChev, { rotation: 180 });
-      } else {
-        gsap.set(container, { height: "auto", overflow: "visible" });
-        gsap.set(collapsedEl, { display: "flex", position: "relative", opacity: 1 });
-        gsap.set(expandedEl, { display: "none", opacity: 0 });
-        if (collapsedChev) gsap.set(collapsedChev, { rotation: 0 });
-        if (expandedChev) gsap.set(expandedChev, { rotation: 0 });
-      }
-      return;
-    }
-
-    // Kill any in-flight animations
-    gsap.killTweensOf([container, collapsedEl, expandedEl, collapsedChev, expandedChev]);
-
-    if (isExpanded) {
-      // OPENING:
-      const startH = container.offsetHeight || collapsedEl.offsetHeight;
-
-      // Pin expandedEl absolutely to measure its natural height without affecting layout
-      gsap.set(expandedEl, {
-        display: "block",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        opacity: 0,
-      });
-      const targetH = expandedEl.scrollHeight;
-
-      // Pin collapsedEl absolutely so it stays at the top without pushing
-      gsap.set(collapsedEl, {
-        display: "flex",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        opacity: 1,
-      });
-
-      // Fix container height and enable clipping
-      gsap.set(container, { overflow: "hidden", height: startH });
-
-      const tl = gsap.timeline({
-        onComplete: () => {
-          gsap.set(collapsedEl, { display: "none" });
-          gsap.set(expandedEl, {
-            position: "relative",
-            top: "auto",
-            left: "auto",
-            width: "auto",
-          });
-          gsap.set(container, { height: "auto", overflow: "visible" });
-        },
-      });
-
-      tl.to(
-        container,
-        { height: targetH, duration: 0.38, ease: "power2.out" },
-        0
-      );
-      tl.to(
-        collapsedEl,
-        { opacity: 0, duration: 0.16, ease: "power1.out" },
-        0
-      );
-      tl.to(
-        expandedEl,
-        { opacity: 1, duration: 0.3, ease: "power2.out" },
-        0.06
-      );
-      if (collapsedChev) {
-        tl.to(collapsedChev, { rotation: 180, duration: 0.35, ease: "power2.out" }, 0);
-      }
-      if (expandedChev) {
-        tl.to(expandedChev, { rotation: 180, duration: 0.35, ease: "power2.out" }, 0);
-      }
-    } else {
-      // CLOSING:
-      const startH = container.offsetHeight || expandedEl.offsetHeight;
-
-      // Pin collapsedEl absolutely to measure target height
-      gsap.set(collapsedEl, {
-        display: "flex",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        opacity: 0,
-      });
-      const targetH = collapsedEl.scrollHeight;
-
-      // Pin expandedEl absolutely so it stays at the top without pushing
-      gsap.set(expandedEl, {
-        display: "block",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        opacity: 1,
-      });
-
-      // Fix container height and enable clipping
-      gsap.set(container, { overflow: "hidden", height: startH });
-
-      const tl = gsap.timeline({
-        onComplete: () => {
-          gsap.set(expandedEl, { display: "none" });
-          gsap.set(collapsedEl, {
-            position: "relative",
-            top: "auto",
-            left: "auto",
-            width: "auto",
-          });
-          gsap.set(container, { height: "auto", overflow: "visible" });
-        },
-      });
-
-      tl.to(
-        container,
-        { height: targetH, duration: 0.36, ease: "power2.inOut" },
-        0
-      );
-      tl.to(
-        expandedEl,
-        { opacity: 0, duration: 0.16, ease: "power1.in" },
-        0
-      );
-      tl.to(
-        collapsedEl,
-        { opacity: 1, duration: 0.28, ease: "power2.out" },
-        0.08
-      );
-      if (collapsedChev) {
-        tl.to(collapsedChev, { rotation: 0, duration: 0.35, ease: "power2.out" }, 0);
-      }
-      if (expandedChev) {
-        tl.to(expandedChev, { rotation: 0, duration: 0.35, ease: "power2.out" }, 0);
-      }
-    }
-  }, [isExpanded]);
-
   return (
     <div
       onClick={onToggle}
@@ -213,13 +48,9 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
         }
       }}
     >
-      {/* Animated Container */}
-      <div ref={containerRef} className="relative w-full">
-        {/* Collapsed Header View */}
-        <div
-          ref={collapsedWrapperRef}
-          className="flex items-center justify-between gap-4 w-full"
-        >
+      {/* Collapsed View */}
+      {!isExpanded && (
+        <div className="flex items-center justify-between gap-4 w-full">
           <h3 className="font-display text-[26px] sm:text-[30px] md:text-[34px] font-extrabold text-black tracking-tight leading-tight">
             {title}
           </h3>
@@ -234,7 +65,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
               aria-label="Expand"
               className="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
-              <span ref={collapsedChevronRef} className="inline-block leading-none text-xs md:text-sm text-black">
+              <span className="inline-block leading-none text-xs md:text-sm text-black">
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
@@ -248,9 +79,11 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
             </button>
           </div>
         </div>
+      )}
 
-        {/* Expanded View (Header + Bullets + Children) */}
-        <div ref={expandedWrapperRef} className="w-full">
+      {/* Expanded View */}
+      {isExpanded && (
+        <div className="w-full">
           {/* Top Pill / Meta Row */}
           <div className="flex items-center justify-between gap-3 flex-wrap">
             {/* Left: Indicator Dot + Tag Pill */}
@@ -279,7 +112,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                 aria-label="Collapse"
                 className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
-                <span ref={expandedChevronRef} className="inline-block leading-none text-xs md:text-sm text-black">
+                <span className="inline-block leading-none text-xs md:text-sm text-black">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -287,7 +120,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth={3}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
                   </svg>
                 </span>
               </button>
@@ -324,7 +157,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
             {children && <div className="mt-3">{children}</div>}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

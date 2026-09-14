@@ -111,7 +111,7 @@ export const TimelineSection: React.FC = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="relative w-full border-t-[2.5px] sm:border-t-[3px] border-b-[3.5px] border-black bg-white py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+      className="relative w-full overflow-hidden border-t-[2.5px] sm:border-t-[3px] border-b-[3.5px] border-black bg-white py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-[1152px]">
         {/* Section Header */}
