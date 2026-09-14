@@ -1,0 +1,46 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug & scratch
+dumped.html
+page_debug.html
+site.html
+live_assets/
+.chrome-data/
+*.log
+
+# temporary screenshots in public (keep me.png and me.jpg)
+public/*screenshot*.png
+public/final-*.png
+public/check-final.png
+public/real-view.png
+public/rectangular-confetti-live.png
+public/mohammad-zohaib-live.png
+public/perfect-*.png
+public/zohaib-portfolio-final.png
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
