@@ -57,7 +57,7 @@ export const WebDesignCTA: React.FC = () => {
         <div className="mt-7 sm:mt-8">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-[14px] border-[3px] border-black bg-black px-6 sm:px-7 py-3 text-sm sm:text-base font-bold text-white shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
+            className="inline-flex items-center justify-center gap-2 rounded-[16px] border-[3px] border-black bg-black px-[32px] py-[16px] font-display text-[18px] font-medium text-white shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
           >
             <span>See services &amp; pricing</span>
             <span>&rarr;</span>
