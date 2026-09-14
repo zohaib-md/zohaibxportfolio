@@ -146,9 +146,28 @@ export const personalData = {
   ] as TimelineEntry[],
   projectsData: [
     {
+      id: "zonrad",
+      title: "Zonrad",
+      year: "2026-Present",
+      techSummary: "Python · Next.js · TypeScript · React · LLM APIs · Agent Orchestration",
+      techList: [
+        "Python",
+        "Next.js",
+        "TypeScript",
+        "React",
+        "LLM APIs",
+        "Agent Orchestration",
+      ],
+      description:
+        "An AI-native workspace for orchestrating autonomous agents, contextual reasoning, and tool-driven workflows—built to turn complex tasks into structured, actionable execution.",
+      githubUrl: "https://github.com/zohaib-md/zonrad",
+      monogram: "ZR",
+      accentBg: "#FEF08A",
+    },
+    {
       id: "avatarx",
       title: "AvatarX",
-      year: "2025-Present",
+      year: "2026",
       techSummary: "Kotlin · Android · MediaPipe · ML Kit · Gemini 2.5",
       techList: ["Kotlin", "Android", "MediaPipe", "ML Kit", "Gemini 2.5"],
       description:
@@ -160,7 +179,7 @@ export const personalData = {
     {
       id: "miniseek",
       title: "MiniSeek",
-      year: "2025-Present",
+      year: "2026",
       techSummary: "Python · Edge AI · Local-first",
       techList: ["Python", "Edge AI", "Local-first"],
       description:
@@ -172,7 +191,7 @@ export const personalData = {
     {
       id: "ratchet",
       title: "Ratchet",
-      year: "2025-Present",
+      year: "2026",
       techSummary: "Python · AI Safety · Eval/Benchmarking",
       techList: ["Python", "AI Safety", "Eval/Benchmarking"],
       description:
@@ -184,7 +203,7 @@ export const personalData = {
     {
       id: "inbox-triage-agent",
       title: "inbox-triage-agent",
-      year: "2025-Present",
+      year: "2026",
       techSummary: "Python · Google ADK · Agent Guardrails",
       techList: ["Python", "Google ADK", "Agent Guardrails"],
       description:
@@ -196,7 +215,7 @@ export const personalData = {
     {
       id: "expectr",
       title: "Expectr (ZorvynOne)",
-      year: "2025-Present",
+      year: "2026",
       techSummary: "Kotlin · Jetpack Compose · Gemini API · SQLite",
       techList: ["Kotlin", "Jetpack Compose", "Gemini API", "SQLite"],
       description:
@@ -220,7 +239,7 @@ export const personalData = {
     {
       id: "foundry",
       title: "Foundry",
-      year: "2025",
+      year: "2026",
       techSummary: "Vue 3 · Laravel · Pinia · PostgreSQL",
       techList: ["Vue 3", "Laravel", "Pinia", "PostgreSQL"],
       description:
