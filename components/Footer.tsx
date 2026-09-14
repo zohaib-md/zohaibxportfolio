@@ -6,88 +6,84 @@ import { personalData } from "@/lib/data";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative w-full bg-[#1b1917] text-white border-t-[3.5px] border-black pt-16 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <footer className="relative w-full bg-[#0F0F0F] text-white border-t-[3.5px] border-black pt-16 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="mx-auto max-w-[1280px]">
-        {/* Main Footer Row */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-12 pb-14 border-b border-stone-800/70">
-          {/* Left Column: Brand & Status */}
-          <div className="flex flex-col items-start max-w-sm">
-            {/* Logo Pills */}
-            <div className="flex items-center gap-2">
-              <span className="inline-block rounded-full border-[3px] border-black bg-white px-4 py-1 font-display text-lg sm:text-xl font-bold text-black shadow-[3px_3px_0_0_#000000]">
+        {/* Main 3-Column Layout */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-12 pb-12 sm:pb-16">
+          {/* Column 1 (Left, ~35% width): Name pill pair, role, location */}
+          <div className="w-full lg:w-[35%] flex flex-col items-start">
+            {/* Name Pill Pair (same style as nav: first in white pill with black border, last in black pill with yellow text and subtle yellow border) */}
+            <div className="flex items-center gap-2 select-none">
+              <span className="badge badge-lg h-auto py-1.5 px-3.5 bg-white text-black font-display font-extrabold text-base sm:text-lg border-[2.5px] border-black rounded-xl shadow-[3px_3px_0_0_#000000]">
                 {personalData.firstName}
               </span>
-              <span className="inline-block rounded-full border-[3px] border-black bg-[#FACC15] px-4 py-1 font-display text-lg sm:text-xl font-bold text-black shadow-[3px_3px_0_0_#000000]">
+              <span className="badge badge-lg h-auto py-1.5 px-3.5 bg-black text-[#FACC15] font-display font-extrabold text-base sm:text-lg border-[2px] border-[#FACC15]/60 rounded-xl shadow-[3px_3px_0_0_rgba(250,204,21,0.2)]">
                 {personalData.lastName}
               </span>
             </div>
 
-            {/* Subtitles */}
-            <p className="font-display font-medium text-sm sm:text-base text-stone-300 mt-4">
-              Android &amp; Full-Stack Engineer
-            </p>
-            <p className="text-xs sm:text-sm text-stone-500 mt-1">
-              Based in Delhi NCR · Remote friendly
+            {/* Role line (white text) */}
+            <p className="mt-4 font-display text-base sm:text-lg font-bold text-white tracking-tight">
+              Android Developer
             </p>
 
-            {/* Available for projects pill */}
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-3.5 py-1.5 text-xs font-medium text-stone-300">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>Available for projects</span>
-            </div>
+            {/* Location line (gray text) */}
+            <p className="mt-1 text-sm text-neutral-400 font-normal">
+              Delhi NCR · Remote friendly
+            </p>
           </div>
 
-          {/* Middle Column: Explore Navigation */}
+          {/* Column 2 (Center, two sub-columns side by side): Explore links */}
           <div className="flex flex-col items-start">
-            <h4 className="text-[11px] font-bold tracking-wider text-stone-500 uppercase mb-4">
-              Explore
-            </h4>
-            <div className="grid grid-cols-2 gap-x-10 gap-y-2.5">
+            <span className="text-[11px] font-bold tracking-widest text-neutral-500 uppercase mb-4">
+              EXPLORE
+            </span>
+            <div className="grid grid-cols-2 gap-x-12 sm:gap-x-16 gap-y-2.5">
+              {/* Left Sub-column */}
               <div className="flex flex-col gap-2.5">
                 <Link
                   href="#"
-                  className="text-sm text-stone-400 hover:text-white transition-colors duration-150 font-medium"
+                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
                 >
                   Home
                 </Link>
                 <Link
                   href="#blog"
-                  className="text-sm text-stone-400 hover:text-white transition-colors duration-150 font-medium"
+                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
                 >
                   Blog
                 </Link>
                 <Link
                   href="#hire"
-                  className="text-sm text-stone-400 hover:text-white transition-colors duration-150 font-medium"
+                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
                 >
                   Hire Me
                 </Link>
                 <Link
                   href="#contact"
-                  className="text-sm text-stone-400 hover:text-white transition-colors duration-150 font-medium"
+                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
                 >
                   Get in Touch
                 </Link>
               </div>
+
+              {/* Right Sub-column */}
               <div className="flex flex-col gap-2.5">
                 <Link
                   href="#projects"
-                  className="text-sm text-stone-400 hover:text-white transition-colors duration-150 font-medium"
+                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
                 >
                   Projects
                 </Link>
                 <Link
                   href="#products"
-                  className="text-sm text-stone-400 hover:text-white transition-colors duration-150 font-medium"
+                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
                 >
                   Products
                 </Link>
                 <Link
                   href="#design"
-                  className="text-sm text-stone-400 hover:text-white transition-colors duration-150 font-medium"
+                  className="text-sm sm:text-[15px] text-neutral-300 hover:text-[#FACC15] transition-colors leading-relaxed"
                 >
                   Web Design
                 </Link>
@@ -95,13 +91,13 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Connect */}
+          {/* Column 3 (Right): Connect links & email */}
           <div className="flex flex-col items-start">
-            <h4 className="text-[11px] font-bold tracking-wider text-stone-500 uppercase mb-4">
-              Connect
-            </h4>
+            <span className="text-[11px] font-bold tracking-widest text-neutral-500 uppercase mb-4">
+              CONNECT
+            </span>
 
-            {/* Social Icons Row */}
+            {/* Row of 3 circular social icon buttons: LinkedIn, GitHub, X (dark theme version) */}
             <div className="flex items-center gap-2.5">
               {/* LinkedIn */}
               <a
@@ -109,15 +105,15 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 hover:text-white hover:border-stone-700 hover:bg-stone-800 transition-all shadow-[2px_2px_0_0_#000000]"
+                className="w-10 h-10 rounded-full border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-white hover:border-[#FACC15] hover:text-[#FACC15] hover:bg-neutral-800 transition-all duration-150"
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="16"
+                  height="16"
                   className="w-4 h-4 fill-current"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.66 1.66 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66 1.66 1.66 0 0 0-1.66-1.66z" />
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </a>
 
@@ -127,7 +123,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 hover:text-white hover:border-stone-700 hover:bg-stone-800 transition-all shadow-[2px_2px_0_0_#000000]"
+                className="w-10 h-10 rounded-full border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-white hover:border-[#FACC15] hover:text-[#FACC15] hover:bg-neutral-800 transition-all duration-150"
               >
                 <svg
                   width="18"
@@ -145,12 +141,12 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 hover:text-white hover:border-stone-700 hover:bg-stone-800 transition-all shadow-[2px_2px_0_0_#000000]"
+                className="w-10 h-10 rounded-full border border-neutral-700 bg-neutral-900/90 flex items-center justify-center text-white hover:border-[#FACC15] hover:text-[#FACC15] hover:bg-neutral-800 transition-all duration-150"
               >
                 <svg
-                  width="16"
-                  height="16"
-                  className="w-4 h-4 fill-current"
+                  width="15"
+                  height="15"
+                  className="w-3.5 h-3.5 fill-current"
                   viewBox="0 0 24 24"
                 >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -158,21 +154,20 @@ export const Footer: React.FC = () => {
               </a>
             </div>
 
-            {/* Email link */}
+            {/* Email address as plain gray text */}
             <a
-              href="mailto:zohaib.work@gmail.com"
-              className="mt-4 text-xs sm:text-sm text-stone-400 hover:text-white transition-colors duration-150"
+              href="mailto:zohaibmohammad88@gmail.com"
+              className="mt-4 text-sm text-neutral-400 hover:text-white transition-colors"
             >
-              zohaib.work@gmail.com
+              zohaibmohammad88@gmail.com
             </a>
           </div>
         </div>
 
-        {/* Bottom Copyright Row */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        {/* BOTTOM ROW: Thin horizontal divider line & left-aligned copyright */}
+        <div className="pt-8 border-t border-neutral-800/80 flex items-center justify-start text-xs sm:text-sm text-neutral-500">
           <p>
-            &copy; {new Date().getFullYear()} {personalData.firstName}{" "}
-            {personalData.lastName}. All rights reserved.
+            &copy; 2026 {personalData.firstName} {personalData.lastName}. All rights reserved.
           </p>
         </div>
       </div>
