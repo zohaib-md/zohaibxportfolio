@@ -54,9 +54,11 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
       isInitialMount.current = false;
       if (isExpanded) {
         gsap.set(el, { height: "auto", autoAlpha: 1 });
+        el.style.overflow = "visible";
         gsap.set(chev, { rotation: 180 });
       } else {
         gsap.set(el, { height: 0, autoAlpha: 0 });
+        el.style.overflow = "hidden";
         gsap.set(chev, { rotation: 0 });
       }
       return;
@@ -65,10 +67,19 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
     gsap.killTweensOf([el, chev]);
 
     if (isExpanded) {
+      el.style.overflow = "hidden";
       gsap.fromTo(
         el,
         { height: 0, autoAlpha: 0 },
-        { height: "auto", autoAlpha: 1, duration: 0.38, ease: "power2.out" }
+        {
+          height: "auto",
+          autoAlpha: 1,
+          duration: 0.38,
+          ease: "power2.out",
+          onComplete: () => {
+            if (el) el.style.overflow = "visible";
+          },
+        }
       );
       gsap.to(chev, {
         rotation: 180,
@@ -76,6 +87,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
         ease: "power2.inOut",
       });
     } else {
+      if (el) el.style.overflow = "hidden";
       gsap.to(el, {
         height: 0,
         autoAlpha: 0,
@@ -124,14 +136,14 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
             </p>
 
             {/* Inline Pills: Date-range pill + Project-count pill */}
-            <div className="mt-3 flex items-center gap-2.5 flex-wrap">
+            <div className="mt-3 flex items-center gap-2.5 flex-wrap pb-1">
               {/* Date-Range Pill: Light Blue Background */}
-              <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#bfdbfe] px-3.5 py-1 text-xs sm:text-sm font-bold text-black shadow-[2.5px_2.5px_0_0_#000000]">
+              <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#bfdbfe] px-4 sm:px-4.5 py-1 text-xs sm:text-sm font-bold text-black shadow-[2.5px_2.5px_0_0_#000000]">
                 {displayDatePill}
               </span>
 
               {/* Project-Count Pill: Yellow Background */}
-              <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#fef08a] px-3.5 py-1 text-xs sm:text-sm font-bold text-black shadow-[2.5px_2.5px_0_0_#000000]">
+              <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#fef08a] px-3.5 sm:px-4 py-1 text-xs sm:text-sm font-bold text-black shadow-[2.5px_2.5px_0_0_#000000]">
                 {projectCount}
               </span>
             </div>
@@ -173,23 +185,23 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
         Smoothly reveals via GSAP height animation directly below the company pills.
       */}
       <div ref={expandableRef} className="overflow-hidden w-full">
-        <div className="mt-5 pt-5 border-t-2 border-black/10">
+        <div className="mt-5 pt-5 border-t-2 border-black/10 px-0.5">
           {/* Small Role-Entry Header */}
           <div className="flex items-center justify-between gap-3 flex-wrap">
             {/* Left: Indicator Dot + Tag Pill */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 pb-1">
               <span
                 style={{ backgroundColor: dotColor }}
                 className="inline-block h-3 w-3 rounded-full border border-black shadow-[1px_1px_0_0_#000000]"
               />
-              <span className="inline-block rounded-full border-[2px] border-black bg-white px-3 py-1 text-xs font-bold uppercase tracking-wider text-black shadow-[2px_2px_0_0_#000000]">
+              <span className="inline-block rounded-full border-[2px] border-black bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-black shadow-[2px_2px_0_0_#000000]">
                 {tag}
               </span>
             </div>
 
             {/* Right: Date-Range Pill */}
-            <div className="flex items-center">
-              <span className="inline-block rounded-full border-[2px] border-black bg-white px-3.5 py-1 text-xs sm:text-sm font-bold text-black shadow-[2px_2px_0_0_#000000]">
+            <div className="flex items-center pr-2 pb-1">
+              <span className="inline-block rounded-full border-[2px] border-black bg-white px-4.5 sm:px-5 py-1.5 text-xs sm:text-sm font-bold text-black shadow-[2px_2px_0_0_#000000]">
                 {dateRange}
               </span>
             </div>
