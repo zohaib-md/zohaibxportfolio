@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,34 +9,41 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const technologies = [
-  "Kotlin",
-  "Python",
-  "TypeScript",
-  "JavaScript",
-  "PHP",
-  "SQL",
-  "Jetpack Compose",
-  "Google ADK",
-  "MediaPipe",
-  "ML Kit",
-  "Room",
-  "Retrofit",
-  "Hilt",
-  "CameraX",
-  "Firebase",
-  "Django",
-  "Laravel",
-  "Vue 3",
-  "Next.js",
-  "React",
-  "Tailwind CSS",
-  "PostgreSQL",
-  "MySQL",
-  "SQLite",
-  "Docker",
-  "Git",
-  "GitHub Actions",
+export interface TechItem {
+  name: string;
+  iconPath: string;
+}
+
+export const techStack: TechItem[] = [
+  { name: "Kotlin", iconPath: "/tech-logos/kotlin.svg" },
+  { name: "Python", iconPath: "/tech-logos/python.svg" },
+  { name: "TypeScript", iconPath: "/tech-logos/typescript.svg" },
+  { name: "JavaScript", iconPath: "/tech-logos/javascript.svg" },
+  { name: "PHP", iconPath: "/tech-logos/php.svg" },
+  { name: "Jetpack Compose", iconPath: "/tech-logos/jetpack-compose.png" },
+  { name: "Google ADK", iconPath: "/tech-logos/google-adk.png" },
+  { name: "MediaPipe", iconPath: "/tech-logos/mediapipe.svg" },
+  { name: "ML Kit", iconPath: "/tech-logos/ml-kit.png" },
+
+  // Shared Android fallback: Room, Retrofit, Hilt, and CameraX share android.svg as no official standalone logo exists for any of them
+  { name: "Room", iconPath: "/tech-logos/android.svg" },
+  { name: "Retrofit", iconPath: "/tech-logos/android.svg" },
+  { name: "Hilt", iconPath: "/tech-logos/android.svg" },
+  { name: "CameraX", iconPath: "/tech-logos/android.svg" },
+
+  { name: "Firebase", iconPath: "/tech-logos/firebase.svg" },
+  { name: "Django", iconPath: "/tech-logos/django.svg" },
+  { name: "Laravel", iconPath: "/tech-logos/laravel.svg" },
+  { name: "Vue 3", iconPath: "/tech-logos/vue-3.svg" },
+  { name: "Next.js", iconPath: "/tech-logos/next-js.svg" },
+  { name: "React", iconPath: "/tech-logos/react.svg" },
+  { name: "Tailwind CSS", iconPath: "/tech-logos/tailwind-css.svg" },
+  { name: "PostgreSQL", iconPath: "/tech-logos/postgresql.svg" },
+  { name: "MySQL", iconPath: "/tech-logos/mysql.svg" },
+  { name: "SQLite", iconPath: "/tech-logos/sqlite.svg" },
+  { name: "Docker", iconPath: "/tech-logos/docker.svg" },
+  { name: "Git", iconPath: "/tech-logos/git.svg" },
+  { name: "GitHub Actions", iconPath: "/tech-logos/github-actions.svg" },
 ];
 
 export const TechStackSection: React.FC = () => {
@@ -122,23 +130,35 @@ export const TechStackSection: React.FC = () => {
           ref={gridRef}
           className="flex flex-wrap justify-center gap-3.5 sm:gap-4 lg:gap-5 w-full max-w-[1280px] mx-auto"
         >
-          {technologies.map((tech) => (
+          {techStack.map((tech) => (
             <div
-              key={tech}
-              className="tech-card-item relative w-[145px] sm:w-[169.15px] h-[120px] sm:h-[142px] rounded-[18px] sm:rounded-[20px] border-[3px] sm:border-[3.5px] border-black bg-white p-[16px_12px] sm:p-[20px_16px] shadow-[4px_4px_0_0_#000000] sm:shadow-[5px_5px_0_0_#000000] flex items-center justify-center text-center select-none transition-all duration-150 hover:-translate-y-1 hover:shadow-[7px_7px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[2px_2px_0_0_#000000]"
+              key={tech.name}
+              className="tech-card-item relative w-[145px] sm:w-[169.15px] h-[125px] sm:h-[142px] rounded-[18px] sm:rounded-[20px] border-[3px] sm:border-[3.5px] border-black bg-white p-[14px_10px] sm:p-[20px_16px] shadow-[4px_4px_0_0_#000000] sm:shadow-[5px_5px_0_0_#000000] flex flex-col items-center justify-center gap-2 sm:gap-2.5 text-center select-none transition-all duration-150 hover:-translate-y-1 hover:shadow-[7px_7px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[2px_2px_0_0_#000000]"
               style={{
                 willChange: "transform, opacity",
               }}
             >
               {/* Corner decorative square (Top-Left: yellow) */}
-              <span className="absolute -top-[5px] -left-[5px] w-2.5 sm:w-3 h-2.5 sm:h-3 border-[2px] border-black bg-[#FACC15] pointer-events-none" />
+              <span className="absolute -top-[5px] -left-[5px] w-2.5 sm:w-3 h-2.5 sm:h-3 border-[2px] border-black bg-[#FACC15] pointer-events-none z-10" />
 
               {/* Corner decorative square (Bottom-Right: pink) */}
-              <span className="absolute -bottom-[5px] -right-[5px] w-2.5 sm:w-3 h-2.5 sm:h-3 border-[2px] border-black bg-[#F472B6] pointer-events-none" />
+              <span className="absolute -bottom-[5px] -right-[5px] w-2.5 sm:w-3 h-2.5 sm:h-3 border-[2px] border-black bg-[#F472B6] pointer-events-none z-10" />
+
+              {/* Brand Logo Icon */}
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center flex-shrink-0">
+                <Image
+                  src={tech.iconPath}
+                  alt={`${tech.name} logo`}
+                  width={44}
+                  height={44}
+                  unoptimized={tech.iconPath.endsWith(".svg")}
+                  className="w-auto h-auto max-w-[36px] max-h-[36px] sm:max-w-[42px] sm:max-h-[42px] object-contain pointer-events-none select-none"
+                />
+              </div>
 
               {/* Tech Name */}
-              <span className="font-display text-[13px] sm:text-[15px] font-bold text-black leading-snug break-words px-1">
-                {tech}
+              <span className="font-display text-[12px] sm:text-[13.5px] font-bold text-black leading-tight tracking-tight break-words px-1">
+                {tech.name}
               </span>
             </div>
           ))}
