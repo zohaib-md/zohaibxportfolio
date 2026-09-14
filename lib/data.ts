@@ -26,6 +26,18 @@ export interface TimelineEntry {
   bullets?: string[];
 }
 
+export interface ProjectEntry {
+  id: string;
+  title: string;
+  year: string;
+  techSummary: string;
+  techList: string[];
+  description: string;
+  githubUrl: string;
+  monogram: string;
+  accentBg?: string;
+}
+
 export const personalData = {
   firstName: "Mohammad",
   lastName: "Zohaib",
@@ -132,5 +144,91 @@ export const personalData = {
       ],
     },
   ] as TimelineEntry[],
+  projectsData: [
+    {
+      id: "avatarx",
+      title: "AvatarX",
+      year: "2025-Present",
+      techSummary: "Kotlin · Android · MediaPipe · ML Kit · Gemini 2.5",
+      techList: ["Kotlin", "Android", "MediaPipe", "ML Kit", "Gemini 2.5"],
+      description:
+        "On-device Android app mapping body biometrics to a digital avatar for virtual try-on. Combines MediaPipe pose detection and ML Kit segmentation with Gemini 2.5 for AI-driven styling — all running fully on-device, no cloud or AR engine dependency.",
+      githubUrl: "https://github.com/zohaib-md/AvatarX",
+      monogram: "AX",
+      accentBg: "#EFF6FF",
+    },
+    {
+      id: "miniseek",
+      title: "MiniSeek",
+      year: "2025-Present",
+      techSummary: "Python · Edge AI · Local-first",
+      techList: ["Python", "Edge AI", "Local-first"],
+      description:
+        "Local-first agent harness built for edge hardware (M1, 8GB RAM), with zero third-party dependencies and 138 passing tests. Uses a \"model proposes, harness validates, Python executes\" architecture for safe, constrained agent execution.",
+      githubUrl: "https://github.com/zohaib-md/miniseek",
+      monogram: "MS",
+      accentBg: "#F0FDF4",
+    },
+    {
+      id: "ratchet",
+      title: "Ratchet",
+      year: "2025-Present",
+      techSummary: "Python · AI Safety · Eval/Benchmarking",
+      techList: ["Python", "AI Safety", "Eval/Benchmarking"],
+      description:
+        "An empirical benchmark testing whether harness-level constraints (vs. prompt-only rules) reduce dangerous agent actions — achieved 0/30 catastrophic failures once permission layers were added. Evaluation-driven research into agent reliability, not just a demo.",
+      githubUrl: "https://github.com/zohaib-md/ratchet",
+      monogram: "RT",
+      accentBg: "#FEF2F2",
+    },
+    {
+      id: "inbox-triage-agent",
+      title: "inbox-triage-agent",
+      year: "2025-Present",
+      techSummary: "Python · Google ADK · Agent Guardrails",
+      techList: ["Python", "Google ADK", "Agent Guardrails"],
+      description:
+        "Google ADK-based email triage agent with a 10-case evaluation suite (10/10 passing) and an explicit no-auto-send safety guardrail. A compact, well-scoped example of applied agent design with real safety constraints.",
+      githubUrl: "https://github.com/zohaib-md/inbox-triage-agent",
+      monogram: "IT",
+      accentBg: "#FFFBEB",
+    },
+    {
+      id: "expectr",
+      title: "Expectr (ZorvynOne)",
+      year: "2025-Present",
+      techSummary: "Kotlin · Jetpack Compose · Gemini API · SQLite",
+      techList: ["Kotlin", "Jetpack Compose", "Gemini API", "SQLite"],
+      description:
+        "AI-powered personal finance app, 100% Jetpack Compose, with Gemini-driven spending insights and a custom \"financial health score.\" Built offline-first with SQLite over cloud sync, and a custom REST client instead of SDK bloat.",
+      githubUrl: "https://github.com/zohaib-md/expectr",
+      monogram: "EX",
+      accentBg: "#F5F3FF",
+    },
+    {
+      id: "zenith-launcher",
+      title: "Zenith Launcher",
+      year: "2025",
+      techSummary: "Kotlin · Android · Jetpack Compose",
+      techList: ["Kotlin", "Android", "Jetpack Compose"],
+      description:
+        "A custom Android home-screen launcher focused on digital wellbeing — dynamic wallpaper-based theming and built-in friction timers to reduce mindless app usage.",
+      githubUrl: "https://github.com/zohaib-md/zenith-launcher",
+      monogram: "ZL",
+      accentBg: "#ECFDF5",
+    },
+    {
+      id: "foundry",
+      title: "Foundry",
+      year: "2025",
+      techSummary: "Vue 3 · Laravel · Pinia · PostgreSQL",
+      techList: ["Vue 3", "Laravel", "Pinia", "PostgreSQL"],
+      description:
+        "A visual drag-and-drop page builder built with Vue 3 and Laravel — Pinia for state management, with dynamic component trees serialized to Postgres. Demonstrates full-stack web breadth outside the mobile/Python work above.",
+      githubUrl: "https://github.com/zohaib-md/foundry",
+      monogram: "FD",
+      accentBg: "#FFF7ED",
+    },
+  ] as ProjectEntry[],
 };
 
