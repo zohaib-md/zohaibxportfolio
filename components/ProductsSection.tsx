@@ -28,19 +28,27 @@ export const ProductsSection: React.FC = () => {
         ease: "power3.out",
       });
 
-      // Cards staggered entrance
-      gsap.from(".product-card-item", {
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 82%",
-          toggleActions: "play none none reverse",
-        },
-        y: 35,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.12,
-        ease: "power2.out",
-      });
+      // Cards staggered entrance (once: true with clearProps so cards are never stuck offset)
+      gsap.fromTo(
+        ".product-card-item",
+        { y: 25, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 88%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+          onComplete: () => {
+            gsap.set(".product-card-item", { clearProps: "transform" });
+          },
+        }
+      );
     }, sectionRef);
 
     ScrollTrigger.refresh();
@@ -94,24 +102,24 @@ export const ProductsSection: React.FC = () => {
         */}
         <div
           ref={cardsRef}
-          className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full"
+          className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full items-stretch"
         >
           {/* Card 1: Placeholder / Coming Soon */}
-          <div className="product-card-item w-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
+          <div className="product-card-item w-full h-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
             <span className="font-display text-sm sm:text-base font-semibold text-neutral-400 tracking-wide">
               More coming soon
             </span>
           </div>
 
           {/* Card 2: Placeholder / Coming Soon */}
-          <div className="product-card-item w-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
+          <div className="product-card-item w-full h-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
             <span className="font-display text-sm sm:text-base font-semibold text-neutral-400 tracking-wide">
               More coming soon
             </span>
           </div>
 
           {/* Card 3: Placeholder / Coming Soon */}
-          <div className="product-card-item w-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
+          <div className="product-card-item w-full h-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
             <span className="font-display text-sm sm:text-base font-semibold text-neutral-400 tracking-wide">
               More coming soon
             </span>
