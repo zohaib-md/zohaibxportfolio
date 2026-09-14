@@ -62,7 +62,7 @@ export const ProductsSection: React.FC = () => {
           {/* Left Column (Pill badge + H2) */}
           <div className="flex flex-col items-start">
             {/* Small Pill Badge: "Digital Products" */}
-            <span className="inline-flex items-center rounded-full border-[2px] border-black bg-[#e1cef7] px-3.5 py-1 text-xs sm:text-[13px] font-bold text-black shadow-[2px_2px_0_0_#000000]">
+            <span className="inline-flex items-center gap-2 rounded-full border-[3px] border-black bg-[#e9d5ff] px-4 py-2 text-[14px] font-bold text-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">
               Digital Products
             </span>
 

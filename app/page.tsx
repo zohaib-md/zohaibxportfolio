@@ -13,8 +13,7 @@ export default function Home() {
       <TimelineSection />
       <ProjectTimeline />
       <ProductsSection />
-      {/* Web Design CTA section (ready to activate when services are offered) */}
-      {/* <WebDesignCTA /> */}
+      <WebDesignCTA />
     </main>
   );
 }
