@@ -225,18 +225,6 @@ export const personalData = {
       accentBg: "#F5F3FF",
     },
     {
-      id: "zenith-launcher",
-      title: "Zenith Launcher",
-      year: "2025",
-      techSummary: "Kotlin · Android · Jetpack Compose",
-      techList: ["Kotlin", "Android", "Jetpack Compose"],
-      description:
-        "A custom Android home-screen launcher focused on digital wellbeing — dynamic wallpaper-based theming and built-in friction timers to reduce mindless app usage.",
-      githubUrl: "https://github.com/zohaib-md/zenith-launcher",
-      monogram: "ZL",
-      accentBg: "#ECFDF5",
-    },
-    {
       id: "foundry",
       title: "Foundry",
       year: "2026",
@@ -247,6 +235,18 @@ export const personalData = {
       githubUrl: "https://github.com/zohaib-md/foundry",
       monogram: "FD",
       accentBg: "#FFF7ED",
+    },
+    {
+      id: "zenith-launcher",
+      title: "Zenith Launcher",
+      year: "2025",
+      techSummary: "Kotlin · Android · Jetpack Compose",
+      techList: ["Kotlin", "Android", "Jetpack Compose"],
+      description:
+        "A custom Android home-screen launcher focused on digital wellbeing — dynamic wallpaper-based theming and built-in friction timers to reduce mindless app usage.",
+      githubUrl: "https://github.com/zohaib-md/zenith-launcher",
+      monogram: "ZL",
+      accentBg: "#ECFDF5",
     },
   ] as ProjectEntry[],
 };
