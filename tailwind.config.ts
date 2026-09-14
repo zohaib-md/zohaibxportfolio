@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#fef18b",
+        canvas: "#fef3c7",
         "canvas-nav": "#fde68a",
         "neo-yellow": "#facc15",
         "neo-blue": "#bfdbfe",
@@ -46,7 +46,7 @@ const config: Config = {
           secondary: "#bfdbfe",
           accent: "#f472b6",
           neutral: "#000000",
-          "base-100": "#fef18b",
+          "base-100": "#fef3c7",
           "base-200": "#fde68a",
           "base-300": "#fef08a",
           info: "#60a5fa",

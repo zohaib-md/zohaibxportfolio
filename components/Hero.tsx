@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#fef18b] pt-28 pb-16 px-4 sm:px-6 lg:px-8"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#fef3c7] pt-28 pb-16 px-4 sm:px-6 lg:px-8"
     >
       {/* Background Dot Grid Pattern */}
       <div className="absolute inset-0 neo-dot-grid pointer-events-none" />

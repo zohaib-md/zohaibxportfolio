@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #fef18b;
+  --background: #fef3c7;
   --foreground: #000000;
   --font-space-grotesk: 'Space Grotesk', system-ui, sans-serif;
   --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
@@ -15,7 +15,7 @@ html {
 
 body {
   color: #000000;
-  background-color: #fef18b;
+  background-color: #fef3c7;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
