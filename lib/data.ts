@@ -17,7 +17,7 @@ export const personalData = {
   title: "Android Developer — Available for Hire",
   bio: "Software Dev Intern at Hyperzod, an AI-first quick commerce SaaS platform. Core background in Android/Kotlin development, currently expanding into Laravel, PHP, and Vue.js through the internship. Pursuing a B.Tech in Computer Science and Engineering.",
   bioHtml: `Software Dev Intern at <strong class="font-bold text-black">Hyperzod</strong>, an AI-first quick commerce SaaS platform. Core background in <strong class="font-bold text-black">Android/Kotlin</strong> development, currently expanding into <strong class="font-bold text-black">Laravel</strong>, <strong class="font-bold text-black">PHP</strong>, and <strong class="font-bold text-black">Vue.js</strong> through the internship. Pursuing a B.Tech in <strong class="font-bold text-black">Computer Science and Engineering</strong>.`,
-  location: "BASED IN SRINAGAR · REMOTE FRIENDLY",
+  location: "BASED IN DELHI NCR · REMOTE FRIENDLY",
   photo: "/me.jpg",
   hireLink: "#contact",
   workLink: "#projects",
