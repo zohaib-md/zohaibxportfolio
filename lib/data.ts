@@ -116,7 +116,7 @@ export const personalData = {
     {
       id: "education",
       type: "education",
-      tag: "EDUCATION",
+      tag: "ENGINEERING",
       title: "Education",
       role: "B.Tech in Information Technology",
       organization: "AKGEC",

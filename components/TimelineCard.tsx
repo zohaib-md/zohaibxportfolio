@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 
 export interface TimelineCardProps {
@@ -41,12 +41,6 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
   const expandableRef = useRef<HTMLDivElement>(null);
   const companyChevronRef = useRef<HTMLSpanElement>(null);
   const isInitialMount = useRef(true);
-
-  // Role-level expand state (second level of expand/collapse for achievements)
-  const [roleExpanded, setRoleExpanded] = useState(true);
-  const bulletsRef = useRef<HTMLDivElement>(null);
-  const roleChevronRef = useRef<HTMLSpanElement>(null);
-  const isRoleInitialMount = useRef(true);
 
   const displayDatePill = dateRangeFormatted || dateRange;
 
@@ -95,52 +89,6 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
       });
     }
   }, [isExpanded]);
-
-  // Role-level expand/collapse animation
-  useEffect(() => {
-    const bEl = bulletsRef.current;
-    const rChev = roleChevronRef.current;
-    if (!bEl || !rChev) return;
-
-    if (isRoleInitialMount.current) {
-      isRoleInitialMount.current = false;
-      if (roleExpanded) {
-        gsap.set(bEl, { height: "auto", autoAlpha: 1 });
-        gsap.set(rChev, { rotation: 180 });
-      } else {
-        gsap.set(bEl, { height: 0, autoAlpha: 0 });
-        gsap.set(rChev, { rotation: 0 });
-      }
-      return;
-    }
-
-    gsap.killTweensOf([bEl, rChev]);
-
-    if (roleExpanded) {
-      gsap.fromTo(
-        bEl,
-        { height: 0, autoAlpha: 0 },
-        { height: "auto", autoAlpha: 1, duration: 0.32, ease: "power2.out" }
-      );
-      gsap.to(rChev, {
-        rotation: 180,
-        duration: 0.3,
-        ease: "power2.inOut",
-      });
-    } else {
-      gsap.to(bEl, {
-        height: 0,
-        autoAlpha: 0,
-        duration: 0.25,
-        ease: "power2.inOut",
-      });
-      gsap.to(rChev, {
-        rotation: 0,
-        duration: 0.3,
-        ease: "power2.inOut",
-      });
-    }
-  }, [roleExpanded]);
 
   return (
     <div
@@ -239,38 +187,11 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
               </span>
             </div>
 
-            {/* Right: Date-Range Pill + Role Chevron Button */}
-            <div className="flex items-center gap-2.5">
+            {/* Right: Date-Range Pill */}
+            <div className="flex items-center">
               <span className="inline-block rounded-full border-[2px] border-black bg-white px-3.5 py-1 text-xs sm:text-sm font-bold text-black shadow-[2px_2px_0_0_#000000]">
                 {dateRange}
               </span>
-
-              {/* Second-Level Fixed-Size Chevron for Role Bullets */}
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setRoleExpanded((prev) => !prev);
-                }}
-                aria-label={roleExpanded ? "Collapse details" : "Expand details"}
-                className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
-              >
-                <span
-                  ref={roleChevronRef}
-                  className="inline-block leading-none text-xs md:text-sm text-black"
-                  style={{ transformOrigin: "center center" }}
-                >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    strokeWidth={3}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </button>
             </div>
           </div>
 
@@ -285,26 +206,24 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
             <span className="text-neutral-500 font-normal">• {location}</span>
           </div>
 
-          {/* Second-level collapsible bullets container */}
-          <div ref={bulletsRef} className="overflow-hidden">
-            {bullets && bullets.length > 0 && (
-              <div className="mt-4 pt-3.5 border-t-2 border-black/10">
-                <ul className="space-y-2.5">
-                  {bullets.map((bullet, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-3 text-sm sm:text-[15px] leading-relaxed text-neutral-900"
-                    >
-                      <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-[1px] bg-black shadow-[1.5px_1.5px_0_0_#000000]" />
-                      <span className="flex-1 font-normal">{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          {/* Achievements / Bullets */}
+          {bullets && bullets.length > 0 && (
+            <div className="mt-4 pt-3.5 border-t-2 border-black/10">
+              <ul className="space-y-2.5">
+                {bullets.map((bullet, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-3 text-sm sm:text-[15px] leading-relaxed text-neutral-900"
+                  >
+                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-[1px] bg-black shadow-[1.5px_1.5px_0_0_#000000]" />
+                    <span className="flex-1 font-normal">{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-            {children && <div className="mt-3">{children}</div>}
-          </div>
+          {children && <div className="mt-3">{children}</div>}
         </div>
       </div>
     </div>
