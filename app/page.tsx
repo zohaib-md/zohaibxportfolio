@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { AboutSection } from "@/components/AboutSection";
 import { TimelineSection } from "@/components/TimelineSection";
 import { ProjectTimeline } from "@/components/ProjectTimeline";
 import { ProductsSection } from "@/components/ProductsSection";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#fef3c7]">
       <Navbar />
       <Hero />
+      <AboutSection />
       <TimelineSection />
       <ProjectTimeline />
       <ProductsSection />

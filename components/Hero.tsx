@@ -6,6 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { personalData } from "@/lib/data";
+import { ResumeButton } from "./ResumeButton";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +14,7 @@ if (typeof window !== "undefined") {
 
 export const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const photoRef = useRef<HTMLDivElement>(null);
+  const photoContainerRef = useRef<HTMLDivElement>(null);
   const helloRef = useRef<HTMLParagraphElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -28,8 +29,9 @@ export const Hero: React.FC = () => {
         defaults: { ease: "power3.out" },
       });
 
-      tl.from(photoRef.current, {
+      tl.from(photoContainerRef.current, {
         y: 20,
+        opacity: 0.8,
         duration: 0.35,
         ease: "power2.out",
       })
@@ -40,6 +42,7 @@ export const Hero: React.FC = () => {
             duration: 0.3,
             stagger: 0.04,
             ease: "back.out(1.4)",
+            clearProps: "transform",
           },
           "-=0.2"
         )
@@ -85,28 +88,43 @@ export const Hero: React.FC = () => {
         aria-hidden="true"
       />
 
-      {/* Confetti Shape 3: Green Square (below and to the right of photo, fully visible) */}
+      {/* Confetti Shape 3: Green Square (below and to the right of photo, visible on desktop) */}
       <div
-        className="confetti-shape absolute top-[72%] sm:top-[74%] lg:top-[70%] left-[24%] sm:left-[26%] lg:left-[27%] xl:left-[28%] w-28 sm:w-32 lg:w-36 h-28 sm:h-32 lg:h-36 bg-[#34d399] border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rounded-none rotate-[-6deg] pointer-events-none z-10"
+        className="confetti-shape absolute hidden lg:block top-[70%] left-[27%] xl:left-[28%] w-32 lg:w-36 h-32 lg:h-36 bg-[#34d399] border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rounded-none rotate-[-6deg] pointer-events-none z-10"
         aria-hidden="true"
       />
 
       {/* Main Two-Column Hero Container */}
       <div className="relative z-30 max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-        {/* Left Column: Profile Photo */}
+        {/* Left Column: Profile Photo with Washi Tape */}
         <div className="lg:col-span-5 flex justify-center lg:justify-start lg:pl-2 xl:pl-6 relative">
           <div
-            ref={photoRef}
-            className="neo-card relative h-72 w-72 sm:h-80 sm:w-80 lg:h-[350px] lg:w-[350px] xl:h-[370px] xl:w-[370px] overflow-hidden rounded-[32px] bg-white border-[3.5px] border-black shadow-[7px_7px_0_0_#000000] transition-transform hover:-translate-y-1 hover:shadow-[9px_9px_0_0_#000000] duration-200 z-20"
+            ref={photoContainerRef}
+            className="relative select-none"
           >
-            <Image
-              src={personalData.photo}
-              alt={`${personalData.firstName} ${personalData.lastName}`}
-              fill
-              priority
-              className="object-cover scale-[1.35] origin-[58%_45%]"
-              sizes="(max-width: 640px) 288px, (max-width: 1024px) 350px, 370px"
-            />
+            {/* Washi Tape Strip across top-left corner */}
+            <div
+              className="absolute -top-3 left-4 sm:left-6 z-30 pointer-events-none w-28 sm:w-32 h-7 sm:h-8 rounded-[2px] bg-[#fef08a]/85 border-[1.5px] border-black/75 shadow-[1px_1px_0px_0px_rgba(0,0,0,0.15)] rotate-[15deg] flex flex-col justify-center items-center gap-1 overflow-hidden"
+              aria-hidden="true"
+            >
+              {/* Faint horizontal washi tape texture lines */}
+              <div className="w-[85%] h-[1px] bg-black/15" />
+              <div className="w-[85%] h-[1px] bg-black/15" />
+            </div>
+
+            {/* Photo Card with thick black border and hard shadow */}
+            <div
+              className="neo-card relative h-72 w-72 sm:h-80 sm:w-80 lg:h-[350px] lg:w-[350px] xl:h-[370px] xl:w-[370px] overflow-hidden rounded-[32px] bg-white border-[3.5px] border-black shadow-[7px_7px_0_0_#000000] z-20"
+            >
+              <Image
+                src={personalData.photo}
+                alt={`${personalData.firstName} ${personalData.lastName}`}
+                fill
+                priority
+                className="object-cover scale-[1.35] origin-[58%_45%]"
+                sizes="(max-width: 640px) 288px, (max-width: 1024px) 350px, 370px"
+              />
+            </div>
           </div>
         </div>
 
@@ -175,17 +193,17 @@ export const Hero: React.FC = () => {
             </Link>
           </div>
 
-          {/* Location Badge + Confetti Shape 4 relative container */}
-          <div ref={badgeRef} className="pt-1 relative z-20">
-            <span className="inline-block rounded-md border-[3px] border-black bg-black px-3.5 py-1 text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white shadow-[3px_3px_0_0_#000000]">
+          {/* Location Badge + Resume Button relative container */}
+          <div
+            ref={badgeRef}
+            className="pt-1 relative z-20 flex flex-col sm:inline-block items-center"
+          >
+            <span className="inline-block rounded-md border-[3px] border-black bg-black px-3.5 py-1 text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white shadow-[3px_3px_0_0_#000000] relative z-20">
               {personalData.location}
             </span>
 
-            {/* Confetti Shape 4: Bottom-Right White Rectangle (underneath/behind the badge) */}
-            <div
-              className="confetti-shape absolute -bottom-8 -right-36 sm:-right-40 w-36 sm:w-44 h-16 sm:h-20 bg-white border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rounded-none rotate-[3deg] pointer-events-none -z-10"
-              aria-hidden="true"
-            />
+            {/* Clickable Resume Easter Egg Button */}
+            <ResumeButton className="confetti-shape mt-4 sm:mt-0 sm:absolute sm:left-[calc(100%+16px)] sm:-top-5 w-max flex-shrink-0 z-10 hover:z-30" />
           </div>
         </div>
       </div>

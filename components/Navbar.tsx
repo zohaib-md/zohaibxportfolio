@@ -2,12 +2,34 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { personalData } from "@/lib/data";
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  const [activeLink, setActiveLink] = useState("Home");
+  const isLinkActive = (label: string) => {
+    if (pathname === "/products" || pathname?.startsWith("/products")) {
+      return label === "Products";
+    }
+    if (pathname === "/hire" || pathname?.startsWith("/hire")) {
+      return label === "Hire Me";
+    }
+    if (pathname === "/design" || pathname?.startsWith("/design")) {
+      return label === "Web Design";
+    }
+    if (pathname === "/blog" || pathname?.startsWith("/blog")) {
+      return label === "Blog";
+    }
+    if (pathname === "/projects" || pathname?.startsWith("/projects")) {
+      return label === "Projects";
+    }
+    if (pathname === "/contact" || pathname?.startsWith("/contact")) {
+      return label === "Get in Touch";
+    }
+    return label === "Home";
+  };
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -17,7 +39,7 @@ export const Navbar: React.FC = () => {
         className="w-full bg-[#fde68a] border-[3.5px] border-black rounded-[26px] shadow-[6px_6px_0_0_#000000] px-4 py-2.5 sm:px-5 sm:py-3 flex items-center justify-between transition-transform duration-200"
       >
         {/* Left: Dual-Pill Name Badges */}
-        <Link href="#" className="flex items-center gap-2 group cursor-pointer select-none">
+        <Link href="/" className="flex items-center gap-2 group cursor-pointer select-none">
           {/* First Name Badge */}
           <span className="badge badge-lg h-auto py-1.5 px-3.5 bg-white text-black font-display font-extrabold text-base sm:text-lg border-[3px] border-black rounded-xl shadow-[3px_3px_0_0_#000000] transition-transform group-hover:-translate-y-0.5">
             {personalData.firstName}
@@ -31,12 +53,11 @@ export const Navbar: React.FC = () => {
         {/* Center-Right: Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-2.5">
           {personalData.navLinks.map((link) => {
-            const isActive = activeLink === link.label;
+            const isActive = isLinkActive(link.label);
             return (
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={() => setActiveLink(link.label)}
                 style={{ backgroundColor: link.bg }}
                 className={`inline-flex items-center justify-center h-auto py-1.5 px-3.5 border-[2.5px] border-black rounded-xl font-display font-bold text-xs sm:text-sm text-black transition-all duration-150 select-none ${
                   isActive
@@ -54,7 +75,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-2 sm:gap-2.5">
           {/* LinkedIn Icon Button */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/mohammad-zohaib-279794204/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -67,7 +88,7 @@ export const Navbar: React.FC = () => {
 
           {/* GitHub Icon Button */}
           <a
-            href="https://github.com"
+            href="https://github.com/zohaib-md"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -84,7 +105,7 @@ export const Navbar: React.FC = () => {
 
           {/* X / Twitter Icon Button */}
           <a
-            href="https://x.com"
+            href="https://x.com/zohaib_kt"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X (Twitter)"
@@ -116,13 +137,12 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="lg:hidden mt-3 w-full bg-[#fde68a] border-[3.5px] border-black rounded-2xl shadow-[6px_6px_0_0_#000000] p-4 flex flex-col gap-2.5 animate-fadeIn">
           {personalData.navLinks.map((link) => {
-            const isActive = activeLink === link.label;
+            const isActive = isLinkActive(link.label);
             return (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => {
-                  setActiveLink(link.label);
                   setMobileMenuOpen(false);
                 }}
                 style={{ backgroundColor: link.bg }}

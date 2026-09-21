@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SplashScreen } from "@/components/SplashScreen";
 
 export const metadata: Metadata = {
-  title: "Mohammad Zohaib — Android Developer & Full-Stack Engineer",
+  title: "Mohammad Zohaib · Software Developer & Full-Stack Engineer",
   description:
-    "Portfolio of Mohammad Zohaib, Android & Kotlin Developer and Software Dev Intern at Hyperzod. Building responsive Android apps, Laravel backends, and Vue.js interfaces.",
+    "Portfolio of Mohammad Zohaib, Software Developer and Software Dev Intern at Hyperzod. Building agentic AI systems, LLM pipelines, Android apps, and full-stack solutions.",
 };
 
 export default function RootLayout({
@@ -23,6 +24,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-[#fef3c7]">
+        <SplashScreen />
         {children}
       </body>
     </html>

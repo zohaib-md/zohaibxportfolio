@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
 
             {/* Role line (white text) */}
             <p className="mt-4 font-display text-base sm:text-lg font-bold text-white tracking-tight">
-              Android Developer
+              Software Developer
             </p>
 
             {/* Location line (gray text) */}
@@ -42,25 +42,25 @@ export const Footer: React.FC = () => {
               {/* Left Sub-column */}
               <div className="flex flex-col gap-2.5">
                 <Link
-                  href="#"
+                  href="/"
                   className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Home
                 </Link>
                 <Link
-                  href="#blog"
+                  href="/blog"
                   className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Blog
                 </Link>
                 <Link
-                  href="#hire"
+                  href="/hire"
                   className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Hire Me
                 </Link>
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Get in Touch
@@ -70,19 +70,19 @@ export const Footer: React.FC = () => {
               {/* Right Sub-column */}
               <div className="flex flex-col gap-2.5">
                 <Link
-                  href="#projects"
+                  href="/projects"
                   className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Projects
                 </Link>
                 <Link
-                  href="#products"
+                  href="/products"
                   className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Products
                 </Link>
                 <Link
-                  href="#design"
+                  href="/design"
                   className="text-sm sm:text-[15px] text-neutral-400 hover:text-white transition-colors leading-relaxed"
                 >
                   Web Design
@@ -101,7 +101,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2.5">
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mohammad-zohaib-279794204/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
 
               {/* X / Twitter */}
               <a
-                href="https://x.com"
+                href="https://x.com/zohaib_kt"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"

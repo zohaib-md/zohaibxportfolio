@@ -10,7 +10,11 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export const ProjectTimeline: React.FC = () => {
+export interface ProjectTimelineProps {
+  isPage?: boolean;
+}
+
+export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ isPage = false }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
@@ -42,30 +46,33 @@ export const ProjectTimeline: React.FC = () => {
         },
       });
 
-      headerTl
-        .from(badgeRef.current, {
+      if (badgeRef.current) {
+        headerTl.from(badgeRef.current, {
           y: 20,
           scale: 0.9,
           opacity: 0,
           duration: 0.5,
           ease: "back.out(1.5)",
-        })
+        });
+      }
+
+      headerTl
         .from(
           titleBox1Ref.current,
           {
             y: 35,
-            rotation: -2,
+            rotation: isPage ? 0 : -2,
             opacity: 0,
             duration: 0.6,
             ease: "power3.out",
           },
-          "-=0.3"
+          badgeRef.current ? "-=0.3" : undefined
         )
         .from(
           titleBox2Ref.current,
           {
             y: 35,
-            rotation: 2,
+            rotation: isPage ? 0 : 2,
             opacity: 0,
             duration: 0.6,
             ease: "power3.out",
@@ -113,7 +120,7 @@ export const ProjectTimeline: React.FC = () => {
 
     ScrollTrigger.refresh();
     return () => ctx.revert();
-  }, []);
+  }, [isPage]);
 
   const projects: ProjectEntry[] = personalData.projectsData || [];
 
@@ -121,65 +128,107 @@ export const ProjectTimeline: React.FC = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative w-full overflow-hidden border-b-[3.5px] border-black bg-[#fef18b] py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+      className={`relative w-full overflow-hidden bg-[#fef18b] px-4 sm:px-6 lg:px-8 ${
+        isPage
+          ? "pt-28 sm:pt-36 md:pt-40 pb-20 sm:pb-24 md:pb-28 border-b-0 min-h-screen"
+          : "py-20 sm:py-24 md:py-28 border-b-[3.5px] border-black"
+      }`}
     >
       {/* Background Dot Grid Pattern matching hero */}
       <div className="absolute inset-0 neo-dot-grid pointer-events-none" />
 
-      {/* Confetti Shape 1: Top-Left Rotated White Square */}
-      <div
-        className="confetti-shape absolute -left-4 sm:left-8 top-16 sm:top-20 w-16 sm:w-24 h-16 sm:h-24 bg-white border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rotate-[-8deg] pointer-events-none z-0"
-        aria-hidden="true"
-      />
+      {/* Confetti Shapes (homepage section only) */}
+      {!isPage && (
+        <>
+          {/* Confetti Shape 1: Top-Left Rotated White Square */}
+          <div
+            className="confetti-shape absolute -left-4 sm:left-8 top-16 sm:top-20 w-16 sm:w-24 h-16 sm:h-24 bg-white border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rotate-[-8deg] pointer-events-none z-0"
+            aria-hidden="true"
+          />
 
-      {/* Confetti Shape 2: Top-Right Rotated Light-Blue Rectangle */}
-      <div
-        className="confetti-shape absolute -right-4 sm:right-10 top-20 sm:top-28 w-20 sm:w-28 h-14 sm:h-18 bg-[#bfdbfe] border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rotate-[-5deg] pointer-events-none z-0"
-        aria-hidden="true"
-      />
+          {/* Confetti Shape 2: Top-Right Rotated Light-Blue Rectangle */}
+          <div
+            className="confetti-shape absolute -right-4 sm:right-10 top-20 sm:top-28 w-20 sm:w-28 h-14 sm:h-18 bg-[#bfdbfe] border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rotate-[-5deg] pointer-events-none z-0"
+            aria-hidden="true"
+          />
 
-      {/* Confetti Shape 3: Bottom Rotated Pink Rectangle */}
-      <div
-        className="confetti-shape absolute left-[15%] sm:left-[22%] bottom-8 sm:bottom-12 w-20 sm:w-28 h-10 sm:h-12 bg-[#fca5a5] border-[3.5px] border-black shadow-[5px_5px_0_0_#000000] rotate-[3deg] pointer-events-none z-0"
-        aria-hidden="true"
-      />
+          {/* Confetti Shape 3: Bottom Rotated Pink Rectangle */}
+          <div
+            className="confetti-shape absolute left-[15%] sm:left-[22%] bottom-8 sm:bottom-12 w-20 sm:w-28 h-10 sm:h-12 bg-[#fca5a5] border-[3.5px] border-black shadow-[5px_5px_0_0_#000000] rotate-[3deg] pointer-events-none z-0"
+            aria-hidden="true"
+          />
+        </>
+      )}
 
       <div className="relative z-10 mx-auto max-w-[1152px]">
         {/* Section Header */}
         <div ref={headerRef} className="mb-14 sm:mb-16 md:mb-20 text-center">
-          {/* Small Black Pill Badge */}
-          <div ref={badgeRef} className="inline-block mb-3.5 sm:mb-4">
-            <span className="inline-flex items-center rounded-full bg-black px-4 py-1.5 text-xs font-black uppercase tracking-wider text-white shadow-[2.5px_2.5px_0_0_#000000]">
-              FEATURED PROJECTS
-            </span>
-          </div>
+          {isPage ? (
+            <>
+              {/* H2 split in two boxes: "Featured" (plain black text) + "Projects" (white box, black border, hard shadow) */}
+              <h2 className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 font-display text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
+                {/* Plain black text: Featured */}
+                <span
+                  ref={titleBox1Ref}
+                  className="inline-block leading-none"
+                >
+                  Featured
+                </span>
 
-          {/* H2 Split across two boxes: "Timeline" and "of Builds" */}
-          <h2 className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 font-display text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
-            {/* White Box: Timeline */}
-            <span
-              ref={titleBox1Ref}
-              className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-white px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000]"
-            >
-              Timeline
-            </span>
+                {/* White Box: Projects */}
+                <span
+                  ref={titleBox2Ref}
+                  className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-white px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] leading-none"
+                >
+                  Projects
+                </span>
+              </h2>
 
-            {/* White Box: of Builds */}
-            <span
-              ref={titleBox2Ref}
-              className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-white px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000]"
-            >
-              of Builds
-            </span>
-          </h2>
+              {/* Subhead */}
+              <p
+                ref={subtitleRef}
+                className="mt-3 sm:mt-4 text-base sm:text-lg text-neutral-600 font-normal"
+              >
+                A timeline of projects I&apos;ve built and deployed
+              </p>
+            </>
+          ) : (
+            <>
+              {/* Small Black Pill Badge */}
+              <div ref={badgeRef} className="inline-block mb-3.5 sm:mb-4">
+                <span className="inline-flex items-center rounded-full bg-black px-4 py-1.5 text-xs font-black uppercase tracking-wider text-white shadow-[2.5px_2.5px_0_0_#000000]">
+                  FEATURED PROJECTS
+                </span>
+              </div>
 
-          {/* Subtitle */}
-          <p
-            ref={subtitleRef}
-            className="mt-3 sm:mt-4 text-base sm:text-lg text-neutral-600 font-normal"
-          >
-            A timeline of projects I&apos;ve built and deployed
-          </p>
+              {/* H2 Split across two boxes: "Timeline" and "of Builds" */}
+              <h2 className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 font-display text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
+                {/* White Box: Timeline */}
+                <span
+                  ref={titleBox1Ref}
+                  className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-white px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000]"
+                >
+                  Timeline
+                </span>
+
+                {/* White Box: of Builds */}
+                <span
+                  ref={titleBox2Ref}
+                  className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-white px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000]"
+                >
+                  of Builds
+                </span>
+              </h2>
+
+              {/* Subtitle */}
+              <p
+                ref={subtitleRef}
+                className="mt-3 sm:mt-4 text-base sm:text-lg text-neutral-600 font-normal"
+              >
+                A timeline of projects I&apos;ve built and deployed
+              </p>
+            </>
+          )}
         </div>
 
         {/* Timeline Structure (1152px total width: 48px rail + 1104px card) */}

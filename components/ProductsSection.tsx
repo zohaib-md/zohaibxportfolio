@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { personalData } from "@/lib/data";
+import { ProductCard } from "@/components/ProductCard";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -74,24 +77,24 @@ export const ProductsSection: React.FC = () => {
               Digital Products
             </span>
 
-            {/* H2 Title: "Tools I Sell" (48px Space Grotesk) */}
+            {/* H2 Title: "Tools I Built" (48px Space Grotesk) */}
             <h2 className="font-display mt-3 sm:mt-4 text-[34px] sm:text-[42px] md:text-[48px] font-bold text-black tracking-tight leading-none flex items-center flex-wrap gap-2.5">
               <span>Tools I</span>
               <span className="inline-block rounded-[12px] md:rounded-[14px] border-[3px] border-black bg-[#FACC15] px-3.5 py-1 text-black shadow-[4px_4px_0_0_#000000]">
-                Sell
+                Built
               </span>
             </h2>
           </div>
 
           {/* Right Column: "View all →" button */}
           <div className="flex-shrink-0">
-            <a
-              href="#products"
+            <Link
+              href="/products"
               className="inline-flex items-center gap-2 rounded-full border-[2.5px] border-black bg-black px-6 py-2.5 text-sm sm:text-base font-bold text-white shadow-[3.5px_3.5px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
             >
               <span>View all</span>
               <span>&rarr;</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -102,28 +105,11 @@ export const ProductsSection: React.FC = () => {
         */}
         <div
           ref={cardsRef}
-          className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full items-stretch"
+          className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full items-stretch"
         >
-          {/* Card 1: Placeholder / Coming Soon */}
-          <div className="product-card-item w-full h-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
-            <span className="font-display text-sm sm:text-base font-semibold text-neutral-400 tracking-wide">
-              More coming soon
-            </span>
-          </div>
-
-          {/* Card 2: Placeholder / Coming Soon */}
-          <div className="product-card-item w-full h-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
-            <span className="font-display text-sm sm:text-base font-semibold text-neutral-400 tracking-wide">
-              More coming soon
-            </span>
-          </div>
-
-          {/* Card 3: Placeholder / Coming Soon */}
-          <div className="product-card-item w-full h-full min-h-[251.59px] rounded-[20px] md:rounded-[24px] border-[2.5px] border-[#999999] bg-[#e6f0fe] p-6 shadow-[5px_5px_0_0_#94a3b8] flex items-center justify-center select-none transition-transform hover:-translate-y-0.5">
-            <span className="font-display text-sm sm:text-base font-semibold text-neutral-400 tracking-wide">
-              More coming soon
-            </span>
-          </div>
+          {personalData.productsData.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </div>
     </section>

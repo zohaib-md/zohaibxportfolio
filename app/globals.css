@@ -101,3 +101,87 @@ body {
   @apply badge font-display font-bold text-black border-[2.5px] border-black;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.9);
 }
+
+/* Splash Screen Animations */
+@keyframes splash-letter-pop-m {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-3deg);
+  }
+}
+
+@keyframes splash-letter-pop-z {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(6deg);
+  }
+}
+
+@keyframes splash-progress-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes splash-float-1 {
+  0%, 100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-4deg);
+  }
+}
+
+@keyframes splash-float-2 {
+  0%, 100% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(18deg);
+  }
+}
+
+@keyframes splash-float-3 {
+  0%, 100% {
+    transform: translateY(0) rotate(6deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-2deg);
+  }
+}
+
+.splash-letter-m {
+  animation: splash-letter-pop-m 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s both;
+}
+
+.splash-letter-z {
+  animation: splash-letter-pop-z 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.24s both;
+}
+
+.splash-progress {
+  animation: splash-progress-fill 0.9s ease-out 0.35s both;
+}
+
+.splash-float-1 {
+  animation: splash-float-1 3s ease-in-out infinite;
+}
+
+.splash-float-2 {
+  animation: splash-float-2 3s ease-in-out 0.5s infinite;
+}
+
+.splash-float-3 {
+  animation: splash-float-3 3s ease-in-out 1s infinite;
+}
+
