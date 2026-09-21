@@ -44,3 +44,6 @@ public/zohaib-portfolio-final.png
 
 # typescript
 *.tsbuildinfo
+
+# Local Netlify folder
+.netlify
