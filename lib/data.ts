@@ -34,6 +34,7 @@ export interface ProjectEntry {
   techList: string[];
   description: string;
   githubUrl: string;
+  liveUrl?: string;
   monogram: string;
   accentBg?: string;
 }
@@ -176,6 +177,7 @@ export const personalData = {
       description:
         "An AI-native workspace for orchestrating autonomous agents, contextual reasoning, and tool-driven workflows: built to turn complex tasks into structured, actionable execution.",
       githubUrl: "https://github.com/zohaib-md/zonrad",
+      liveUrl: "https://zonrad.com",
       monogram: "ZR",
       accentBg: "#FEF08A",
     },

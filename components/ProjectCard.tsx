@@ -177,7 +177,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {/* View Details Button (Yellow Pill with external link icon) */}
           <div className="mt-5 pt-1">
             <a
-              href={project.githubUrl}
+              href={project.liveUrl ?? project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
