@@ -117,14 +117,13 @@ export const ContactCards: React.FC = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".contact-card-item",
-        { y: 35, opacity: 0 },
+        { y: 16, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.55,
-          stagger: 0.1,
+          duration: 0.4,
+          stagger: 0.08,
           ease: "power2.out",
-          delay: 0.2,
           clearProps: "transform,opacity",
         }
       );
