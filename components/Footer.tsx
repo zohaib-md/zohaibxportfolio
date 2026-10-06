@@ -32,6 +32,16 @@ export const Footer: React.FC = () => {
             <p className="mt-1 text-sm text-neutral-400 font-normal">
               Delhi NCR · Remote friendly
             </p>
+
+            {/* Get In Touch CTA */}
+            <div className="mt-6">
+              <BookACallLink
+                href="/contact"
+                imageSrc="/me.jpg"
+                defaultText="GET IN TOUCH"
+                hoverText="Let's Talk!"
+              />
+            </div>
           </div>
 
           {/* Column 2 (Center, two sub-columns side by side): Explore links */}
@@ -165,17 +175,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* BOTTOM ROW: Thin horizontal divider line & left-aligned copyright + CTA */}
-        <div className="pt-8 border-t border-neutral-800/80 flex items-center justify-between gap-4 flex-wrap">
-          <p className="text-xs sm:text-sm text-neutral-500">
+        {/* BOTTOM ROW: Thin horizontal divider line & copyright */}
+        <div className="pt-8 border-t border-neutral-800/80 flex items-center justify-start text-xs sm:text-sm text-neutral-500">
+          <p>
             &copy; 2026 {personalData.firstName} {personalData.lastName}. All rights reserved.
           </p>
-          <BookACallLink
-            href="/contact"
-            imageSrc="/me.jpg"
-            defaultText="GET IN TOUCH"
-            hoverText="Let's Talk!"
-          />
         </div>
       </div>
     </footer>
