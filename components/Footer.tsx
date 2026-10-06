@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { personalData } from "@/lib/data";
+import { BookACallLink } from "@/components/get-in-touch";
 
 export const Footer: React.FC = () => {
   return (
@@ -164,11 +165,17 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* BOTTOM ROW: Thin horizontal divider line & left-aligned copyright */}
-        <div className="pt-8 border-t border-neutral-800/80 flex items-center justify-start text-xs sm:text-sm text-neutral-500">
-          <p>
+        {/* BOTTOM ROW: Thin horizontal divider line & left-aligned copyright + CTA */}
+        <div className="pt-8 border-t border-neutral-800/80 flex items-center justify-between gap-4 flex-wrap">
+          <p className="text-xs sm:text-sm text-neutral-500">
             &copy; 2026 {personalData.firstName} {personalData.lastName}. All rights reserved.
           </p>
+          <BookACallLink
+            href="/contact"
+            imageSrc="/me.jpg"
+            defaultText="GET IN TOUCH"
+            hoverText="Let's Talk!"
+          />
         </div>
       </div>
     </footer>

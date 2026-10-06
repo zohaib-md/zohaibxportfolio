@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SplashScreen } from "@/components/SplashScreen";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mohdzohaib.com"),
@@ -157,7 +161,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN" data-theme="neo">
+    <html lang="en-IN" data-theme="neo" className={cn("font-sans", geist.variable)}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

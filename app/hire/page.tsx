@@ -11,9 +11,19 @@ import { FAQSection } from "@/components/hire/FAQSection";
 import { FinalCTA } from "@/components/hire/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Hire Mohammad Zohaib — Android & Full-Stack Developer",
+  title: "Hire Mohammad Zohaib — AI Engineer & Full-Stack Developer India",
   description:
-    "Hire an Android & Full-Stack Developer specializing in Kotlin, Jetpack Compose, Laravel, Vue.js, and AI-integrated developer tools.",
+    "Hire Mohammad Zohaib, an AI Engineer and Software Developer from India. Specializing in LLM integrations, agentic AI, Android (Kotlin/Jetpack Compose), Next.js, Laravel, and Vue.js. Available for freelance and full-time engagements globally.",
+  alternates: {
+    canonical: "https://mohdzohaib.com/hire",
+  },
+  openGraph: {
+    title: "Hire Mohammad Zohaib — AI Engineer & Full-Stack Developer India",
+    description:
+      "Hire an AI Engineer and Full-Stack Developer from India. Expert in LLMs, Android, Next.js, and Laravel. Available for freelance and full-time projects globally.",
+    url: "https://mohdzohaib.com/hire",
+    type: "website",
+  },
 };
 
 export default function HirePage() {

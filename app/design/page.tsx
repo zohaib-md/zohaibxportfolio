@@ -10,9 +10,19 @@ import { DesignFAQ } from "@/components/design/DesignFAQ";
 import { DesignFinalCTA } from "@/components/design/DesignFinalCTA";
 
 export const metadata: Metadata = {
-  title: "Web Design & Product Development — Mohammad Zohaib",
+  title: "Web Design & Product Development — Mohammad Zohaib India",
   description:
-    "I design and build products end-to-end: from UI to deployment. Currently building Zonrad solo. Open to landing pages, MVPs, and full-stack builds for startups and small businesses.",
+    "Mohammad Zohaib designs and builds web products end-to-end: UI design, MVP development, landing pages, and full-stack builds for startups and small businesses. Based in India, available globally.",
+  alternates: {
+    canonical: "https://mohdzohaib.com/design",
+  },
+  openGraph: {
+    title: "Web Design & Product Development — Mohammad Zohaib",
+    description:
+      "End-to-end web design and product development by Mohammad Zohaib. Landing pages, MVPs, and full-stack builds for startups. Based in India.",
+    url: "https://mohdzohaib.com/design",
+    type: "website",
+  },
 };
 
 export default function DesignPage() {

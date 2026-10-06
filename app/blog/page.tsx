@@ -7,8 +7,19 @@ import type { Metadata } from "next";
 export const revalidate = 3600; // Revalidate every 1 hour
 
 export const metadata: Metadata = {
-  title: "Blog — Mohammad Zohaib",
-  description: "Thoughts on development, design, and building products",
+  title: "Blog — Mohammad Zohaib | AI & Software Development",
+  description:
+    "Read thoughts and technical articles by Mohammad Zohaib on AI engineering, LLM development, Android (Kotlin), full-stack web development, and building software products from India.",
+  alternates: {
+    canonical: "https://mohdzohaib.com/blog",
+  },
+  openGraph: {
+    title: "Blog — Mohammad Zohaib | AI & Software Development",
+    description:
+      "Technical articles on AI engineering, LLMs, Android, and full-stack development by Mohammad Zohaib, Software Developer from India.",
+    url: "https://mohdzohaib.com/blog",
+    type: "website",
+  },
 };
 
 export default async function BlogPage() {

@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
+    // Optimised images for better Core Web Vitals / SEO ranking
+    unoptimized: false,
+    formats: ["image/avif", "image/webp"],
   },
 };
 
