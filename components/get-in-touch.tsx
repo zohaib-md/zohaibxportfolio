@@ -139,7 +139,7 @@ export function BookACallLink({
       onFocus={handleFocus}
       onBlur={handleBlur}
       className={cn(
-        "isolate h-12 w-full max-w-48 shrink-0 overflow-hidden rounded-full p-0 text-white no-underline outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98]",
+        "isolate h-12 w-48 shrink-0 overflow-hidden rounded-full p-0 text-white no-underline outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98]",
         className
       )}
     >
