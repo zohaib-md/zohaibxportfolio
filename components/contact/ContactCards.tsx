@@ -122,7 +122,6 @@ export const ContactCards: React.FC = () => {
           y: 0,
           opacity: 1,
           duration: 0.4,
-          stagger: 0.08,
           ease: "power2.out",
           clearProps: "transform,opacity",
         }
