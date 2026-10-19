@@ -40,25 +40,25 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, []);
 
   const [play001] = useSound(click001Sound, {
-    volume: 0.45,
+    volume: 0.35,
     soundEnabled: mounted ? soundEnabled : false,
     interrupt: true,
   });
 
   const [play8bit] = useSound(click8bitSound, {
-    volume: 0.4,
+    volume: 0.35,
     soundEnabled: mounted ? soundEnabled : false,
     interrupt: true,
   });
 
   const [playSwOn] = useSound(switchOnSound, {
-    volume: 0.5,
+    volume: 0.35,
     soundEnabled: true,
     interrupt: true,
   });
 
   const [playSwOff] = useSound(switchOffSound, {
-    volume: 0.5,
+    volume: 0.35,
     soundEnabled: true,
     interrupt: true,
   });
@@ -82,14 +82,16 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const playClick = useCallback(
     (overrides?: { volume?: number; playbackRate?: number }) => {
-      play001(overrides);
+      const rate = overrides?.playbackRate ?? (0.97 + Math.random() * 0.06);
+      play001({ playbackRate: rate, ...overrides });
     },
     [play001]
   );
 
   const playRetro = useCallback(
     (overrides?: { volume?: number; playbackRate?: number }) => {
-      play8bit(overrides);
+      const rate = overrides?.playbackRate ?? (0.97 + Math.random() * 0.06);
+      play8bit({ playbackRate: rate, ...overrides });
     },
     [play8bit]
   );
