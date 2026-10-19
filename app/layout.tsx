@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SplashScreen } from "@/components/SplashScreen";
+import { SoundProvider } from "@/components/providers/SoundProvider";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -173,8 +174,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-[#fef3c7]">
-        <SplashScreen />
-        {children}
+        <SoundProvider>
+          <SplashScreen />
+          {children}
+        </SoundProvider>
       </body>
     </html>
   );

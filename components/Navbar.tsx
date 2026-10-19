@@ -3,11 +3,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Volume2, VolumeX } from "lucide-react";
 import { personalData } from "@/lib/data";
+import { useSoundContext } from "@/components/providers/SoundProvider";
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { soundEnabled, toggleSound, playClick, playRetro } = useSoundContext();
 
   const isLinkActive = (label: string) => {
     if (pathname === "/products" || pathname?.startsWith("/products")) {
@@ -39,7 +42,11 @@ export const Navbar: React.FC = () => {
         className="w-full bg-[#fde68a] border-[3.5px] border-black rounded-[26px] shadow-[6px_6px_0_0_#000000] px-4 py-2.5 sm:px-5 sm:py-3 flex items-center justify-between transition-transform duration-200"
       >
         {/* Left: Dual-Pill Name Badges */}
-        <Link href="/" className="flex items-center gap-2 group cursor-pointer select-none">
+        <Link
+          href="/"
+          onClick={() => playRetro()}
+          className="flex items-center gap-2 group cursor-pointer select-none"
+        >
           {/* First Name Badge */}
           <span className="badge badge-lg h-auto py-1.5 px-3.5 bg-white text-black font-display font-extrabold text-base sm:text-lg border-[3px] border-black rounded-xl shadow-[3px_3px_0_0_#000000] transition-transform group-hover:-translate-y-0.5">
             {personalData.firstName}
@@ -58,6 +65,7 @@ export const Navbar: React.FC = () => {
               <Link
                 key={link.label}
                 href={link.href}
+                onClick={() => playClick()}
                 style={{ backgroundColor: link.bg }}
                 className={`inline-flex items-center justify-center h-auto py-1.5 px-3.5 border-[2.5px] border-black rounded-xl font-display font-bold text-xs sm:text-sm text-black transition-all duration-150 select-none ${
                   isActive
@@ -71,14 +79,31 @@ export const Navbar: React.FC = () => {
           })}
         </div>
 
-        {/* Far Right: Circular Social Icons & Mobile Toggle */}
+        {/* Far Right: Sound Toggle, Circular Social Icons & Mobile Toggle */}
         <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Sound Effects Mute/Unmute Toggle Button */}
+          <button
+            onClick={toggleSound}
+            aria-label={soundEnabled ? "Mute sound effects" : "Unmute sound effects"}
+            title={soundEnabled ? "Sound Effects: ON (Click to mute)" : "Sound Effects: OFF (Click to unmute)"}
+            className={`btn-neo-circle group transition-colors duration-150 ${
+              soundEnabled ? "bg-[#34d399] hover:bg-[#10b981]" : "bg-[#f87171] hover:bg-[#ef4444]"
+            }`}
+          >
+            {soundEnabled ? (
+              <Volume2 className="w-4 h-4 max-w-[16px] max-h-[16px] text-black group-hover:scale-110 transition-transform" />
+            ) : (
+              <VolumeX className="w-4 h-4 max-w-[16px] max-h-[16px] text-white group-hover:scale-110 transition-transform" />
+            )}
+          </button>
+
           {/* LinkedIn Icon Button */}
           <a
             href="https://www.linkedin.com/in/mohammad-zohaib-279794204/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            onClick={() => playClick()}
             className="btn-neo-circle"
           >
             <svg width="16" height="16" className="w-4 h-4 max-w-[16px] max-h-[16px] fill-current" viewBox="0 0 24 24">
@@ -92,6 +117,7 @@ export const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
+            onClick={() => playClick()}
             className="btn-neo-circle"
           >
             <svg width="16" height="16" className="w-4 h-4 max-w-[16px] max-h-[16px] fill-current" viewBox="0 0 24 24">
@@ -109,6 +135,7 @@ export const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X (Twitter)"
+            onClick={() => playClick()}
             className="btn-neo-circle"
           >
             <svg width="16" height="16" className="w-4 h-4 max-w-[16px] max-h-[16px] fill-current" viewBox="0 0 24 24">
@@ -118,7 +145,10 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Toggle Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              playClick();
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
             className="lg:hidden btn-neo-circle !rounded-xl"
             aria-label="Toggle mobile menu"
           >
@@ -143,6 +173,7 @@ export const Navbar: React.FC = () => {
                 key={link.label}
                 href={link.href}
                 onClick={() => {
+                  playClick();
                   setMobileMenuOpen(false);
                 }}
                 style={{ backgroundColor: link.bg }}

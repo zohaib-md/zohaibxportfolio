@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { personalData } from "@/lib/data";
 import { ResumeButton } from "./ResumeButton";
+import { useSoundContext } from "@/components/providers/SoundProvider";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -21,6 +22,7 @@ export const Hero: React.FC = () => {
   const bioRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
+  const { playClick } = useSoundContext();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -177,6 +179,7 @@ export const Hero: React.FC = () => {
             {/* Primary CTA (Hire Me) */}
             <Link
               href={personalData.hireLink}
+              onClick={() => playClick()}
               className="btn-neo w-full sm:w-auto !bg-[#facc15] hover:!bg-[#facc15] active:!bg-[#facc15] border-[3px] border-black rounded-xl px-7 py-3 text-base font-display font-bold flex items-center justify-center gap-2"
             >
               Hire Me
@@ -186,6 +189,7 @@ export const Hero: React.FC = () => {
             {/* Secondary CTA (See My Work) */}
             <Link
               href={personalData.workLink}
+              onClick={() => playClick()}
               className="btn-neo w-full sm:w-auto !bg-white hover:!bg-white active:!bg-white border-[3px] border-black rounded-xl px-7 py-3 text-base font-display font-bold flex items-center justify-center gap-2"
             >
               See My Work

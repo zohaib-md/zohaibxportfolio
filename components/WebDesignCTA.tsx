@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSoundContext } from "@/components/providers/SoundProvider";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -11,6 +12,7 @@ if (typeof window !== "undefined") {
 
 export const WebDesignCTA: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { playClick } = useSoundContext();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -58,6 +60,7 @@ export const WebDesignCTA: React.FC = () => {
         <div className="mt-7 sm:mt-8">
           <Link
             href="/design"
+            onClick={() => playClick()}
             className="inline-flex items-center justify-center gap-2 rounded-[16px] border-[3px] border-black bg-black px-[32px] py-[16px] font-display text-[18px] font-medium text-white shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
           >
             <span>See services &amp; pricing</span>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useSoundContext } from "@/components/providers/SoundProvider";
 
 export type FramerCtaVariant = "dark" | "light";
 
@@ -30,12 +31,19 @@ export const PrimaryCtaLink = ({
   className,
   children,
   variant = "dark",
+  onClick,
   ...props
 }: FramerCtaLinkProps) => {
+  const { playClick } = useSoundContext();
+
   return (
     <Link
       className={cn(ctaBaseClasses, className)}
       style={ctaStyle(variant)}
+      onClick={(e) => {
+        playClick();
+        onClick?.(e);
+      }}
       {...props}
     >
       {children}

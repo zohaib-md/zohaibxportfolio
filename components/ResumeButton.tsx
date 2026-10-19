@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useSoundContext } from "@/components/providers/SoundProvider";
 
 interface ResumeButtonProps {
   className?: string;
@@ -9,6 +12,8 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
   className = "",
   onClick,
 }) => {
+  const { playRetro } = useSoundContext();
+
   return (
     <div className={`relative flex flex-col sm:inline-flex items-center ${className}`}>
       {/* Clickable Neo-brutalist White Resume Button */}
@@ -18,7 +23,10 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
         rel="noopener noreferrer"
         aria-label="Download resume"
         title="Download my Resume (PDF)"
-        onClick={onClick}
+        onClick={(e) => {
+          playRetro();
+          onClick?.();
+        }}
         className="group relative z-10 inline-flex items-center justify-center bg-white border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rotate-[3deg] select-none cursor-pointer transition-all duration-150 ease-out hover:rotate-[6deg] hover:bg-[#fef9c3] hover:shadow-[8px_8px_0_0_#000000] hover:-translate-y-1 hover:-translate-x-0.5 active:scale-[0.96] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0_0_#000000] active:rotate-[2deg] px-5 sm:px-6 py-2.5 sm:py-3"
       >
         {/* Document Icon */}

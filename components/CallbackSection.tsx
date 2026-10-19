@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSoundContext } from "@/components/providers/SoundProvider";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +14,7 @@ export const CallbackSection: React.FC = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { playRetro } = useSoundContext();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -38,6 +40,7 @@ export const CallbackSection: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!whatsapp.trim()) return;
+    playRetro();
     setSubmitted(true);
   };
 
