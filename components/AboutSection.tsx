@@ -172,45 +172,45 @@ export const AboutSection: React.FC = () => {
           <div className="space-y-6 sm:space-y-8 md:space-y-9 text-[16px] sm:text-[18px] md:text-[19px] leading-relaxed sm:leading-[1.9] md:leading-[2.1] text-black font-normal">
             {/* Paragraph 1: Left-to-Right sweep */}
             <p className="about-paragraph">
-              I am an Information Technology undergraduate pursuing my B.Tech, specializing in{" "}
+              I am an Information Technology undergraduate pursuing my B.Tech, with a focus on{" "}
               <Highlight color="yellow" direction="ltr" indexInParagraph={0}>
-                agentic AI systems
+                AI systems
               </Highlight>{" "}
               and{" "}
               <Highlight color="cyan" direction="ltr" indexInParagraph={1}>
-                enterprise orchestration platforms
+                scalable backend architecture
               </Highlight>
-              . I build autonomous multi-agent pipelines, MCP-compliant tool ecosystems, and resilient full-stack systems designed for deterministic execution under real-world loads.
+              . I enjoy building reliable services, event-driven pipelines, and software designed to execute predictably under real production loads.
             </p>
 
             {/* Paragraph 2: Right-to-Left sweep */}
             <p className="about-paragraph">
-              At Hyperzod, an AI-first quick commerce SaaS platform, I work across the stack engineering{" "}
+              At Hyperzod, an AI-first quick commerce platform, I work as a{" "}
               <Highlight color="green" direction="rtl" indexInParagraph={0}>
-                multi-agent orchestration pipelines
-              </Highlight>{" "}
-              with LangGraph and Model Context Protocol (MCP), alongside high-throughput integrations in{" "}
-              <Highlight color="pink" direction="rtl" indexInParagraph={1}>
-                Laravel, Vue.js, and Android
+                Software Development Intern
               </Highlight>
-              . I prioritize deterministic harness logic, token efficiency, and clean API boundaries over superficial wrappers.
+              , building multi-tenant integration pipelines, third-party connector services, and full-stack features across{" "}
+              <Highlight color="pink" direction="rtl" indexInParagraph={1}>
+                Laravel, Vue.js, and Python
+              </Highlight>
+              . I gravitate toward core systems logic, connection handling, and data contracts rather than surface-level wrappers.
             </p>
 
             {/* Paragraph 3: Left-to-Right sweep */}
             <p className="about-paragraph">
-              I build AI systems grounded in rigorous engineering. My open-source architectures include{" "}
+              In my open-source work, I focus on{" "}
               <Highlight color="cyan" direction="ltr" indexInParagraph={0}>
-                Zonrad (Agent SDK platform)
-              </Highlight>
-              ,{" "}
-              <Highlight color="green" direction="ltr" indexInParagraph={1}>
-                Ratchet (Agent Safety Benchmark)
-              </Highlight>
-              , and{" "}
-              <Highlight color="yellow" direction="ltr" indexInParagraph={2}>
-                MiniSeek (Local-First Harness)
+                agent runtimes
               </Highlight>{" "}
-              featuring empirical eval suites, strict tool permission boundaries, and zero-shot adversarial stress testing.
+              and{" "}
+              <Highlight color="green" direction="ltr" indexInParagraph={1}>
+                safety evaluations
+              </Highlight>
+              . Through projects like{" "}
+              <Highlight color="yellow" direction="ltr" indexInParagraph={2}>
+                Zonrad and Ratchet
+              </Highlight>
+              , I explore how harness-level permission boundaries and test-driven benchmarks make automated systems dependable rather than erratic.
             </p>
 
             {/* Paragraph 4: Right-to-Left sweep */}
@@ -219,15 +219,15 @@ export const AboutSection: React.FC = () => {
               <Highlight color="yellow" direction="rtl" indexInParagraph={0}>
                 continuous learning
               </Highlight>{" "}
-              and an obsession with{" "}
+              and a dedication to writing{" "}
               <Highlight color="green" direction="rtl" indexInParagraph={1}>
-                reliable, fault-tolerant software
+                clean, maintainable software
               </Highlight>
-              . Through production SaaS work, open-source architectures, and benchmark research, I aim to push autonomous execution forward. Outside of code, I&apos;m a{" "}
+              . Outside of engineering, I&apos;m an{" "}
               <Highlight color="pink" direction="rtl" indexInParagraph={2}>
-                literati and orator
+                orator and writer
               </Highlight>{" "}
-              at my college&apos;s cultural society - articulate communication and rigorous systems thinking go hand in hand.
+              at my college&apos;s cultural society - clear technical communication and structured systems thinking reinforce each other.
             </p>
           </div>
         </div>

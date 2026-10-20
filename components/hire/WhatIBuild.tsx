@@ -12,47 +12,47 @@ interface BuildCard {
 
 const buildCards: BuildCard[] = [
   {
-    title: "AI Agents & Autonomous Systems",
+    title: "AI Systems & Agents",
     description:
-      "Deterministic agent harnesses, multi-agent orchestration, and MCP tool platforms built with empirical safety constraints and eval benchmarks.",
+      "Autonomous agent runtimes, tool execution sandboxes, and safety benchmarks built with test-driven evaluation suites.",
     bg: "bg-[#DCFCE7]",
     bullets: [
-      "Zonrad: Agent SDK platform & canvas orchestration",
-      "Ratchet: Adversarial safety benchmark (0/30 baseline failures after constraints)",
-      "MiniSeek: Local-first agent harness (138 passing tests, sandboxed execution)",
+      "Zonrad: Agent SDK platform with client-side tool execution",
+      "Ratchet: Adversarial safety benchmark evaluating permission layers vs. prompt rules",
+      "MiniSeek: Local-first agent harness with 138 passing tests",
     ],
   },
   {
-    title: "Enterprise Integrations & Full-Stack",
+    title: "Backend Services & Full-Stack",
     description:
-      "Scalable backend architectures, provider-agnostic integration layers, and real-time event-driven infrastructure.",
+      "Scalable API architectures, multi-tenant integration layers, and event-driven data pipelines.",
     bg: "bg-[#DBEAFE]",
     bullets: [
-      "Production multi-agent pipelines with LangGraph & Model Context Protocol (MCP)",
-      "High-throughput event streaming & Redis pub/sub caching layers",
-      "Resilient REST/GraphQL APIs with idempotent webhook handlers",
+      "Multi-tenant integration pipelines with unified API contracts",
+      "Asynchronous event queues, Redis caching, and background sync workers",
+      "Modern full-stack web applications in Next.js, Vue 3, and Laravel",
     ],
   },
   {
-    title: "Android & Edge Intelligence",
+    title: "Mobile & Edge Engineering",
     description:
-      "Native Android apps in Kotlin and Jetpack Compose, featuring on-device ML: pose estimation, segmentation, and offline-first data stores.",
+      "Native Android applications in Kotlin and Jetpack Compose featuring on-device ML and offline-first data stores.",
     bg: "bg-[#FEF08A]",
     bullets: [
-      "AvatarX: On-device generation via MediaPipe + ML Kit + Gemini",
-      "Expectr: AI-powered finance engine (100% Compose)",
-      "Zenith Launcher: Distraction-free digital wellbeing launcher",
+      "AvatarX: On-device biometric mapping via MediaPipe, ML Kit, and Gemini",
+      "Expectr: Personal finance tracker with local-first SQLite storage",
+      "Zenith Launcher: Distraction-free launcher with Android platform APIs",
     ],
   },
   {
     title: "Developer Tooling & Open Source",
     description:
-      "Open-source developer platforms, automated CLI workflows, and testing harnesses engineered for reliability.",
+      "CLI tools, developer utilities, and open-source packages designed with privacy, clean APIs, and automated CI/CD.",
     bg: "bg-[#FCE7F3]",
     bullets: [
-      "Jobbie: Privacy-first resume tailoring & job application CLI",
-      "Strict schema validation & deterministic runtime wrappers",
-      "Production-ready documentation and automated CI/CD pipelines",
+      "Jobbie: Privacy-first CLI for job tailoring and document drafting",
+      "Strict input validation, predictable error handling, and zero telemetry",
+      "Maintainer of open-source developer tooling and benchmarks",
     ],
   },
 ];
@@ -103,7 +103,7 @@ export const WhatIBuild: React.FC = () => {
             What I Build
           </h2>
           <p className="mt-3 text-base sm:text-lg text-neutral-600 font-normal max-w-2xl mx-auto leading-relaxed">
-            End-to-end delivery: autonomous AI agents, enterprise systems, and native mobile apps
+            Full-lifecycle engineering: AI platforms, distributed backends, and client applications
           </p>
         </div>
 
