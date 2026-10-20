@@ -18,11 +18,11 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
     <div className={`relative flex flex-col sm:inline-flex items-center ${className}`}>
       {/* Clickable Neo-brutalist White Resume Button */}
       <a
-        href="/resume.pdf"
+        href="/Mohammad_Zohaib%20X%20Resume_.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Download resume"
-        title="Download my Resume (PDF)"
+        aria-label="Download Mohammad Zohaib Resume"
+        title="Mohammad Zohaib X Resume (PDF)"
         onClick={(e) => {
           playRetro();
           onClick?.();
