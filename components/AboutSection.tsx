@@ -178,9 +178,9 @@ export const AboutSection: React.FC = () => {
               </Highlight>{" "}
               and{" "}
               <Highlight color="cyan" direction="ltr" indexInParagraph={1}>
-                scalable backend architecture
+                frontend UI &amp; product design
               </Highlight>
-              . I enjoy building reliable services, event-driven pipelines, and software designed to execute predictably under real production loads.
+              . I enjoy pairing scalable backend architectures with tactile, responsive interfaces that make complex software feel intuitive and effortless.
             </p>
 
             {/* Paragraph 2: Right-to-Left sweep */}
@@ -189,28 +189,28 @@ export const AboutSection: React.FC = () => {
               <Highlight color="green" direction="rtl" indexInParagraph={0}>
                 Software Development Intern
               </Highlight>
-              , building multi-tenant integration pipelines, third-party connector services, and full-stack features across{" "}
+              , engineering multi-tenant integration pipelines alongside modular{" "}
               <Highlight color="pink" direction="rtl" indexInParagraph={1}>
-                Laravel, Vue.js, and Python
+                Vue.js &amp; Laravel UI systems
               </Highlight>
-              . I gravitate toward core systems logic, connection handling, and data contracts rather than surface-level wrappers.
+              . I care about the complete product experience—from connection pooling and API contracts on the backend to smooth micro-interactions on the client.
             </p>
 
             {/* Paragraph 3: Left-to-Right sweep */}
             <p className="about-paragraph">
-              In my open-source work, I focus on{" "}
+              In my open-source work, I explore{" "}
               <Highlight color="cyan" direction="ltr" indexInParagraph={0}>
                 agent runtimes
               </Highlight>{" "}
               and{" "}
               <Highlight color="green" direction="ltr" indexInParagraph={1}>
-                safety evaluations
+                developer interfaces
               </Highlight>
               . Through projects like{" "}
               <Highlight color="yellow" direction="ltr" indexInParagraph={2}>
                 Zonrad and Ratchet
               </Highlight>
-              , I explore how harness-level permission boundaries and test-driven benchmarks make automated systems dependable rather than erratic.
+              , I build interactive canvas workspaces and test-driven benchmarks where security guardrails and clean visual design work hand in hand.
             </p>
 
             {/* Paragraph 4: Right-to-Left sweep */}
@@ -221,13 +221,13 @@ export const AboutSection: React.FC = () => {
               </Highlight>{" "}
               and a dedication to writing{" "}
               <Highlight color="green" direction="rtl" indexInParagraph={1}>
-                clean, maintainable software
+                clean, well-crafted software
               </Highlight>
               . Outside of engineering, I&apos;m an{" "}
               <Highlight color="pink" direction="rtl" indexInParagraph={2}>
                 orator and writer
               </Highlight>{" "}
-              at my college&apos;s cultural society - clear technical communication and structured systems thinking reinforce each other.
+              at my college&apos;s cultural society - clear technical communication and visual design empathy naturally elevate each other.
             </p>
           </div>
         </div>

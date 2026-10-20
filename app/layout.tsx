@@ -12,17 +12,19 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: "Mohammad Zohaib · Software & Systems Engineer · AI Platforms",
+    default: "Mohammad Zohaib · Software Engineer · AI Platforms & Frontend Design",
     template: "%s | Mohammad Zohaib",
   },
 
   description:
-    "Mohammad Zohaib is a Software & Systems Engineer building AI platforms, autonomous agent runtimes, and scalable backend infrastructure. Intern at Hyperzod.",
+    "Mohammad Zohaib is a Software & Systems Engineer building AI platforms, intuitive frontend design systems, and scalable backend infrastructure. Intern at Hyperzod.",
 
   keywords: [
     "Mohammad Zohaib",
     "Software Engineer",
     "Systems Engineer",
+    "Frontend Design",
+    "UI/UX Design",
     "AI Platforms",
     "Agent Runtimes",
     "Model Context Protocol",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
     "Android Developer",
     "Kotlin",
     "Next.js",
+    "Tailwind CSS",
     "Laravel",
     "Hyperzod",
     "mohdzohaib",
@@ -61,25 +64,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://mohdzohaib.com",
-    siteName: "Mohammad Zohaib — Software & Systems Engineer",
-    title: "Mohammad Zohaib · Software & Systems Engineer · AI Platforms",
+    siteName: "Mohammad Zohaib — Software Engineer",
+    title: "Mohammad Zohaib · Software Engineer · AI Platforms & Frontend Design",
     description:
-      "Software & Systems Engineer building AI platforms, autonomous agent runtimes, and scalable backend infrastructure.",
+      "Software & Systems Engineer building AI platforms, intuitive frontend design systems, and scalable backend infrastructure.",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Mohammad Zohaib — Software & Systems Engineer",
+        alt: "Mohammad Zohaib — Software Engineer",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Mohammad Zohaib · Software & Systems Engineer · AI Platforms",
+    title: "Mohammad Zohaib · Software Engineer · AI Platforms & Frontend Design",
     description:
-      "Software & Systems Engineer building AI platforms, autonomous agent runtimes, and scalable backend infrastructure.",
+      "Software & Systems Engineer building AI platforms, intuitive frontend design systems, and scalable backend infrastructure.",
     images: ["/opengraph-image"],
     creator: "@mohdzohaib",
   },
@@ -97,9 +100,9 @@ const jsonLd = {
       name: "Mohammad Zohaib",
       givenName: "Mohammad",
       familyName: "Zohaib",
-      jobTitle: "Software & Systems Engineer",
+      jobTitle: "Software Engineer · AI Platforms & Frontend Design",
       description:
-        "Software & Systems Engineer based in India, building AI platforms, autonomous agent runtimes, and scalable backend infrastructure.",
+        "Software & Systems Engineer based in India, building AI platforms, intuitive frontend interfaces, and scalable backend infrastructure.",
       url: "https://mohdzohaib.com",
       image: {
         "@type": "ImageObject",
@@ -114,6 +117,7 @@ const jsonLd = {
       knowsAbout: [
         "Artificial Intelligence",
         "AI Platforms",
+        "Frontend Design & UI/UX",
         "Agent Runtimes",
         "Model Context Protocol (MCP)",
         "Distributed Systems",
@@ -122,6 +126,7 @@ const jsonLd = {
         "TypeScript",
         "Kotlin",
         "Next.js",
+        "Tailwind CSS",
         "Laravel",
         "Vue.js",
         "Redis",
@@ -139,9 +144,9 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://mohdzohaib.com/#website",
       url: "https://mohdzohaib.com",
-      name: "Mohammad Zohaib — Software & Systems Engineer",
+      name: "Mohammad Zohaib — Software Engineer",
       description:
-        "Portfolio of Mohammad Zohaib, Software & Systems Engineer specializing in AI platforms and backend architecture.",
+        "Portfolio of Mohammad Zohaib, Software Engineer specializing in AI platforms, frontend design, and backend architecture.",
       publisher: {
         "@id": "https://mohdzohaib.com/#person",
       },

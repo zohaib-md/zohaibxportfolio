@@ -127,7 +127,7 @@ export const HireHero: React.FC = () => {
           ref={subheadRef}
           className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg font-bold text-neutral-700 tracking-wide text-left"
         >
-          AI Platforms &middot; Backend Infrastructure &middot; Intelligent Agents &middot; Full-Stack Systems
+          AI Platforms &middot; Frontend Design &middot; Intelligent Agents &middot; Full-Stack Systems
         </p>
 
         {/* Bio Paragraph */}
@@ -135,7 +135,7 @@ export const HireHero: React.FC = () => {
           ref={bioRef}
           className="mt-5 max-w-3xl text-sm sm:text-base md:text-[17px] text-neutral-800 leading-relaxed font-normal text-left"
         >
-          I engineer AI platforms, autonomous agent runtimes, and resilient backend systems. At <strong className="font-bold text-black">Hyperzod</strong>, I build multi-tenant integration pipelines and event-driven services across the stack. My open-source work focuses on agent harnesses, safety benchmarks, and developer tooling built on verifiable test suites. Available for impactful engineering roles, contract projects, and full-time opportunities.
+          I engineer AI platforms, autonomous agent runtimes, and polished full-stack applications with an eye for thoughtful frontend design. At <strong className="font-bold text-black">Hyperzod</strong>, I work across integration infrastructure and modular UI systems. Outside work, I build open-source agent tooling, safety benchmarks, and high-performance apps. Available for impactful engineering roles, design/dev contracts, and full-time opportunities.
         </p>
 
         {/* Two CTA Buttons */}

@@ -59,9 +59,9 @@ export const personalData = {
   firstName: "Mohammad",
   lastName: "Zohaib",
   eyebrow: "Hello, I'm",
-  title: "Software & Systems Engineer · AI Platforms",
-  bio: "I build AI-driven platforms, autonomous agent runtimes, and scalable backend infrastructure. Currently interning at Hyperzod developing multi-tenant integration pipelines and intelligent workflows, while open-sourcing agent safety benchmarks and developer tooling.",
-  bioHtml: `I build <strong>AI platforms</strong>, <strong>autonomous agent runtimes</strong>, and <strong>scalable backend infrastructure</strong>. Currently interning at Hyperzod developing multi-tenant integration pipelines and intelligent workflows, while open-sourcing agent safety benchmarks and developer tooling.`,
+  title: "Software & Systems Engineer · AI Platforms & Frontend Design",
+  bio: "I build AI platforms, autonomous agent runtimes, and polished full-stack web applications. Passionate about intuitive frontend design and clean interfaces, currently interning at Hyperzod developing multi-tenant integration pipelines and modular UI systems.",
+  bioHtml: `I build AI platforms, autonomous agent runtimes, and polished full-stack web applications. Passionate about intuitive frontend design and clean interfaces, currently interning at Hyperzod developing multi-tenant integration pipelines and modular UI systems.`,
   location: "BASED IN DELHI NCR · REMOTE FRIENDLY",
   photo: "/me.jpg",
   hireLink: "/hire",
@@ -97,8 +97,8 @@ export const personalData = {
       bullets: [
         "Developing multi-tenant integration infrastructure connecting marketing platforms (Zoho Campaigns, Mailchimp, Bird) through unified API contracts and self-healing token lifecycles.",
         "Engineered intelligent task pipelines using LangGraph and MCP server interfaces, featuring real-time SSE streaming and Redis Pub/Sub event dispatch.",
-        "Designed asynchronous bulk data sync pipelines with HTTP connection pooling, Redis caching, and background workers—reducing payload overhead by 35%.",
-        "Implemented per-provider rate limiting, idempotent webhook processing, and operational telemetry for reliable sync under multi-tenant load.",
+        "Built modular Theme Builder components and reactive dashboard interfaces in Vue.js and Tailwind CSS, enabling real-time storefront layout customization.",
+        "Designed asynchronous bulk data sync pipelines with HTTP connection pooling and Redis caching, cutting payload overhead by 35% with idempotent webhook handling.",
       ],
     },
     {

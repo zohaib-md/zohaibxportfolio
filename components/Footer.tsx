@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
 
             {/* Role line (white text) */}
             <p className="mt-4 font-display text-base sm:text-lg font-bold text-white tracking-tight">
-              Software &amp; Systems Engineer
+              Software Engineer · AI &amp; Frontend Design
             </p>
 
             {/* Location line (gray text) */}

@@ -23,14 +23,14 @@ const buildCards: BuildCard[] = [
     ],
   },
   {
-    title: "Backend Services & Full-Stack",
+    title: "Frontend Design & Web Systems",
     description:
-      "Scalable API architectures, multi-tenant integration layers, and event-driven data pipelines.",
+      "Interactive user interfaces, modern design systems, and responsive full-stack web applications.",
     bg: "bg-[#DBEAFE]",
     bullets: [
-      "Multi-tenant integration pipelines with unified API contracts",
-      "Asynchronous event queues, Redis caching, and background sync workers",
-      "Modern full-stack web applications in Next.js, Vue 3, and Laravel",
+      "Tactile, high-craft web design with smooth GSAP animations & micro-interactions",
+      "Modular UI components, theme builders, and state systems in Vue 3 & Next.js",
+      "Scalable backend APIs and database schemas in Laravel & PostgreSQL",
     ],
   },
   {
@@ -103,7 +103,7 @@ export const WhatIBuild: React.FC = () => {
             What I Build
           </h2>
           <p className="mt-3 text-base sm:text-lg text-neutral-600 font-normal max-w-2xl mx-auto leading-relaxed">
-            Full-lifecycle engineering: AI platforms, distributed backends, and client applications
+            Full-lifecycle craft: AI platforms, interactive frontend design, and scalable systems
           </p>
         </div>
 
