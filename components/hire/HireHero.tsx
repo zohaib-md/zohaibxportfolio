@@ -113,12 +113,12 @@ export const HireHero: React.FC = () => {
 
         {/* H1 Heading */}
         <h1 className="mt-5 sm:mt-6 flex flex-col items-start font-display text-[36px] sm:text-[50px] md:text-[60px] font-bold text-black tracking-tight leading-[1.1]">
-          <span ref={title1Ref}>Hire an Android &amp; Full-Stack</span>
+          <span ref={title1Ref}>Hire an AI Systems &amp;</span>
           <span
             ref={title2Ref}
             className="mt-2 inline-block rounded-[14px] md:rounded-[18px] border-[3.5px] border-black bg-[#FACC15] px-5 sm:px-7 py-1 sm:py-1.5 text-black shadow-[4.5px_4.5px_0_0_#000000] md:shadow-[5.5px_5.5px_0_0_#000000]"
           >
-            Developer
+            Software Engineer
           </span>
         </h1>
 
@@ -127,7 +127,7 @@ export const HireHero: React.FC = () => {
           ref={subheadRef}
           className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg font-bold text-neutral-700 tracking-wide text-left"
         >
-          Kotlin &middot; Jetpack Compose &middot; Full-Stack Systems &middot; AI-Integrated Apps
+          Agentic Platforms &middot; Multi-Agent Orchestration &middot; MCP Tooling &middot; Enterprise Systems
         </p>
 
         {/* Bio Paragraph */}
@@ -135,7 +135,7 @@ export const HireHero: React.FC = () => {
           ref={bioRef}
           className="mt-5 max-w-3xl text-sm sm:text-base md:text-[17px] text-neutral-800 leading-relaxed font-normal text-left"
         >
-          I&apos;m a Software Dev Intern at <strong className="font-bold text-black">Hyperzod</strong>, an AI-first quick commerce SaaS platform, where I ship production Vue and Laravel features across the stack. Outside work, I build native Android apps and open-source developer tools: CLI agents with real test coverage, not toy demos. I pick up new technologies flexibly to solve problems end-to-end. Available for freelance builds, feature work, and open to full-time roles after graduation.
+          I design autonomous AI agent platforms, multi-agent orchestration pipelines (LangGraph, MCP), and resilient full-stack systems. At <strong className="font-bold text-black">Hyperzod</strong>, an AI-first quick commerce platform, I engineer core multi-agent workflows and backend integrations across the stack. I build developer tools and agent harnesses with empirical evals and strict safety boundaries—not prompt-and-pray toys. Open to impactful engineering roles, enterprise platform contracts, and full-time opportunities.
         </p>
 
         {/* Two CTA Buttons */}

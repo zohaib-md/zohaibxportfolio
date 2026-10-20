@@ -12,46 +12,47 @@ interface BuildCard {
 
 const buildCards: BuildCard[] = [
   {
-    title: "Android Apps",
+    title: "AI Agents & Autonomous Systems",
     description:
-      "Native Android apps in Kotlin and Jetpack Compose, with on-device ML where it fits: pose detection, segmentation, and offline-first architecture.",
-    bg: "bg-[#FEF08A]",
-    bullets: [
-      "AvatarX: on-device avatar generation (MediaPipe + ML Kit + Gemini)",
-      "Expectr: AI-powered finance app (100% Compose)",
-      "Zenith Launcher: digital wellbeing launcher",
-    ],
-  },
-  {
-    title: "AI Agents & Tools",
-    description:
-      "CLI tools and agent harnesses built with real safety constraints and test coverage, not prompt-and-pray.",
+      "Deterministic agent harnesses, multi-agent orchestration, and MCP tool platforms built with empirical safety constraints and eval benchmarks.",
     bg: "bg-[#DCFCE7]",
     bullets: [
-      "jobbie: privacy-first job application CLI (open source)",
-      "MiniSeek: local-first agent harness (138 passing tests)",
-      "Ratchet: agent safety benchmarking",
+      "Zonrad: Agent SDK platform & canvas orchestration",
+      "Ratchet: Adversarial safety benchmark (0/30 baseline failures after constraints)",
+      "MiniSeek: Local-first agent harness (138 passing tests, sandboxed execution)",
     ],
   },
   {
-    title: "Full-Stack Web",
+    title: "Enterprise Integrations & Full-Stack",
     description:
-      "Full-stack web applications and scalable backend systems. Versatile across technologies, adapting quickly to whatever stack best fits the problem.",
+      "Scalable backend architectures, provider-agnostic integration layers, and real-time event-driven infrastructure.",
     bg: "bg-[#DBEAFE]",
     bullets: [
-      "Production backend API engineering and database schema design",
-      "Modern reactive dashboards and web interfaces",
-      "This portfolio: Next.js + TypeScript",
+      "Production multi-agent pipelines with LangGraph & Model Context Protocol (MCP)",
+      "High-throughput event streaming & Redis pub/sub caching layers",
+      "Resilient REST/GraphQL APIs with idempotent webhook handlers",
     ],
   },
   {
-    title: "Open Source",
+    title: "Android & Edge Intelligence",
     description:
-      "I open-source what I build when I can, creating tools other developers can actually use.",
+      "Native Android apps in Kotlin and Jetpack Compose, featuring on-device ML: pose estimation, segmentation, and offline-first data stores.",
+    bg: "bg-[#FEF08A]",
+    bullets: [
+      "AvatarX: On-device generation via MediaPipe + ML Kit + Gemini",
+      "Expectr: AI-powered finance engine (100% Compose)",
+      "Zenith Launcher: Distraction-free digital wellbeing launcher",
+    ],
+  },
+  {
+    title: "Developer Tooling & Open Source",
+    description:
+      "Open-source developer platforms, automated CLI workflows, and testing harnesses engineered for reliability.",
     bg: "bg-[#FCE7F3]",
     bullets: [
-      "jobbie: MIT licensed, active development",
-      "Free & maintained, coffee-fueled",
+      "Jobbie: Privacy-first resume tailoring & job application CLI",
+      "Strict schema validation & deterministic runtime wrappers",
+      "Production-ready documentation and automated CI/CD pipelines",
     ],
   },
 ];
@@ -102,7 +103,7 @@ export const WhatIBuild: React.FC = () => {
             What I Build
           </h2>
           <p className="mt-3 text-base sm:text-lg text-neutral-600 font-normal max-w-2xl mx-auto leading-relaxed">
-            End-to-end delivery: mobile, full-stack web, and developer tools
+            End-to-end delivery: autonomous AI agents, enterprise systems, and native mobile apps
           </p>
         </div>
 

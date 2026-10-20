@@ -172,45 +172,45 @@ export const AboutSection: React.FC = () => {
           <div className="space-y-6 sm:space-y-8 md:space-y-9 text-[16px] sm:text-[18px] md:text-[19px] leading-relaxed sm:leading-[1.9] md:leading-[2.1] text-black font-normal">
             {/* Paragraph 1: Left-to-Right sweep */}
             <p className="about-paragraph">
-              I am an Information Technology undergraduate pursuing my B.Tech, with a primary focus on{" "}
+              I am an Information Technology undergraduate pursuing my B.Tech, specializing in{" "}
               <Highlight color="yellow" direction="ltr" indexInParagraph={0}>
-                Android development
+                agentic AI systems
               </Highlight>{" "}
               and{" "}
               <Highlight color="cyan" direction="ltr" indexInParagraph={1}>
-                full-stack systems
+                enterprise orchestration platforms
               </Highlight>
-              . I enjoy building scalable, API-driven applications and understanding performance under real usage.
+              . I build autonomous multi-agent pipelines, MCP-compliant tool ecosystems, and resilient full-stack systems designed for deterministic execution under real-world loads.
             </p>
 
             {/* Paragraph 2: Right-to-Left sweep */}
             <p className="about-paragraph">
-              I have hands-on experience working as a{" "}
+              At Hyperzod, an AI-first quick commerce SaaS platform, I work across the stack engineering{" "}
               <Highlight color="green" direction="rtl" indexInParagraph={0}>
-                Software Development Intern at Hyperzod
-              </Highlight>
-              , an AI-first quick commerce SaaS platform, where I shipped production Android features and worked across the stack in{" "}
+                multi-agent orchestration pipelines
+              </Highlight>{" "}
+              with LangGraph and Model Context Protocol (MCP), alongside high-throughput integrations in{" "}
               <Highlight color="pink" direction="rtl" indexInParagraph={1}>
-                Laravel and Vue.js
+                Laravel, Vue.js, and Android
               </Highlight>
-              . I prefer working close to the core logic of systems rather than only at the UI layer.
+              . I prioritize deterministic harness logic, token efficiency, and clean API boundaries over superficial wrappers.
             </p>
 
             {/* Paragraph 3: Left-to-Right sweep */}
             <p className="about-paragraph">
-              Alongside Android development, I have a strong interest in{" "}
+              I build AI systems grounded in rigorous engineering. My open-source architectures include{" "}
               <Highlight color="cyan" direction="ltr" indexInParagraph={0}>
-                on-device machine learning
-              </Highlight>{" "}
-              and{" "}
-              <Highlight color="green" direction="ltr" indexInParagraph={1}>
-                AI-integrated tooling
+                Zonrad (Agent SDK platform)
               </Highlight>
-              . My project work includes building and open-sourcing{" "}
+              ,{" "}
+              <Highlight color="green" direction="ltr" indexInParagraph={1}>
+                Ratchet (Agent Safety Benchmark)
+              </Highlight>
+              , and{" "}
               <Highlight color="yellow" direction="ltr" indexInParagraph={2}>
-                CLI agent tools
+                MiniSeek (Local-First Harness)
               </Highlight>{" "}
-              with real test coverage - not just prompt wrappers, but systems with actual safety constraints.
+              featuring empirical eval suites, strict tool permission boundaries, and zero-shot adversarial stress testing.
             </p>
 
             {/* Paragraph 4: Right-to-Left sweep */}
@@ -219,15 +219,15 @@ export const AboutSection: React.FC = () => {
               <Highlight color="yellow" direction="rtl" indexInParagraph={0}>
                 continuous learning
               </Highlight>{" "}
-              and a desire to write{" "}
+              and an obsession with{" "}
               <Highlight color="green" direction="rtl" indexInParagraph={1}>
-                clean, reliable software
+                reliable, fault-tolerant software
               </Highlight>
-              . Through internships, open-source projects, and problem-solving, I aim to build a strong foundation as I grow into a well-rounded engineer. Outside of code, I&apos;m a{" "}
+              . Through production SaaS work, open-source architectures, and benchmark research, I aim to push autonomous execution forward. Outside of code, I&apos;m a{" "}
               <Highlight color="pink" direction="rtl" indexInParagraph={2}>
                 literati and orator
               </Highlight>{" "}
-              at my college&apos;s cultural society - public speaking and writing keep me sharp in ways debugging alone doesn&apos;t.
+              at my college&apos;s cultural society - articulate communication and rigorous systems thinking go hand in hand.
             </p>
           </div>
         </div>
