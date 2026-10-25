@@ -1,9 +1,5 @@
 import React from "react";
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+import { FAQAccordion, type FAQItem } from "@/components/FAQAccordion";
 
 const faqs: FAQItem[] = [
   {
@@ -42,22 +38,16 @@ export const FAQSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Stacked Full-Width Cards */}
-        <div className="mt-12 sm:mt-16 space-y-6 sm:space-y-7">
-          {faqs.map((faq) => (
-            <div
-              key={faq.question}
-              className="rounded-[20px] md:rounded-[24px] border-[3.5px] border-black bg-[#fef9c3] p-6 sm:p-7 md:p-8 shadow-[6px_6px_0_0_#000000] text-left transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_#000000]"
-            >
-              <h3 className="font-display text-lg sm:text-xl font-black text-black tracking-tight leading-snug">
-                {faq.question}
-              </h3>
-              <p className="mt-2.5 sm:mt-3 text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-                {faq.answer}
-              </p>
-            </div>
-          ))}
-        </div>
+        {/* Interactive Accordion List */}
+        <FAQAccordion
+          items={faqs}
+          idPrefix="hire-faq"
+          className="mt-12 sm:mt-16 space-y-6 sm:space-y-7"
+          cardClassName="rounded-[20px] md:rounded-[24px] border-[3.5px] border-black bg-[#fef9c3] shadow-[6px_6px_0_0_#000000] overflow-hidden transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_#000000]"
+          questionClassName="font-display text-lg sm:text-xl font-black text-black tracking-tight leading-snug pr-4"
+          answerClassName="text-sm sm:text-base text-neutral-800 leading-relaxed font-normal"
+          iconWrapperClassName="w-8 h-8 rounded-full border-[2.5px] border-black bg-white flex items-center justify-center flex-shrink-0 shadow-[2px_2px_0_0_#000000]"
+        />
       </div>
     </section>
   );
