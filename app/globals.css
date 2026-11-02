@@ -81,7 +81,7 @@ body {
 }
 
 .btn-neo-circle {
-  @apply btn btn-circle btn-sm w-9 h-9 min-h-[36px] !bg-white border-[2.5px] border-black text-black p-0 flex items-center justify-center overflow-hidden transition-all duration-100;
+  @apply btn btn-circle btn-sm w-9 h-9 min-h-[36px] !bg-white border-[2.5px] border-black text-black p-0 items-center justify-center overflow-hidden transition-all duration-100;
   box-shadow: 3px 3px 0 0 #000000;
   transform: translate(0, 0);
 }
