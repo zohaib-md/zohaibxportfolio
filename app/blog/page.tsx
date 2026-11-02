@@ -4,7 +4,8 @@ import { BlogContent } from "@/components/blog/BlogContent";
 import { getHashnodePosts } from "@/lib/hashnode";
 import type { Metadata } from "next";
 
-export const revalidate = 3600; // Revalidate every 1 hour
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "Blog — Mohammad Zohaib | AI & Software Development",

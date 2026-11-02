@@ -9,10 +9,10 @@ export interface BlogPost {
   tags?: { name: string }[];
 }
 
-const PUBLICATION_QUERY = `
-  query Publication($host: String!) {
-    publication(host: $host) {
-      posts(first: 20) {
+const USER_POSTS_QUERY = `
+  query UserPosts($username: String!) {
+    user(username: $username) {
+      posts(first: 50) {
         edges {
           node {
             id
@@ -32,10 +32,10 @@ const PUBLICATION_QUERY = `
   }
 `;
 
-const USER_POSTS_QUERY = `
-  query UserPosts($username: String!) {
-    user(username: $username) {
-      posts(first: 20) {
+const PUBLICATION_QUERY = `
+  query Publication($host: String!) {
+    publication(host: $host) {
+      posts(first: 50) {
         edges {
           node {
             id
@@ -60,35 +60,7 @@ export async function getHashnodePosts(): Promise<BlogPost[]> {
   const username = process.env.HASHNODE_USERNAME || "mzohaib78";
   const endpoints = ["https://gql-beta.hashnode.com", "https://gql.hashnode.com"];
 
-  // 1. Try publication query first
-  for (const endpoint of endpoints) {
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          query: PUBLICATION_QUERY,
-          variables: { host },
-        }),
-        next: { revalidate: 3600 },
-      });
-
-      if (res.ok) {
-        const json = await res.json();
-        const edges = json.data?.publication?.posts?.edges;
-        if (Array.isArray(edges) && edges.length > 0) {
-          return edges.map((e: { node: BlogPost }) => e.node);
-        }
-      }
-    } catch (err) {
-      // Continue to next endpoint or fallback
-    }
-  }
-
-  // 2. Fallback to user posts query
+  // 1. Try user posts query first (reliable and doesn't require Hashnode Pro)
   for (const endpoint of endpoints) {
     try {
       const res = await fetch(endpoint, {
@@ -101,7 +73,7 @@ export async function getHashnodePosts(): Promise<BlogPost[]> {
           query: USER_POSTS_QUERY,
           variables: { username },
         }),
-        next: { revalidate: 3600 },
+        cache: "no-store",
       });
 
       if (res.ok) {
@@ -112,7 +84,35 @@ export async function getHashnodePosts(): Promise<BlogPost[]> {
         }
       }
     } catch (err) {
-      // Continue to next endpoint
+      // Continue to next endpoint or publication query
+    }
+  }
+
+  // 2. Fallback to publication query
+  for (const endpoint of endpoints) {
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          query: PUBLICATION_QUERY,
+          variables: { host },
+        }),
+        cache: "no-store",
+      });
+
+      if (res.ok) {
+        const json = await res.json();
+        const edges = json.data?.publication?.posts?.edges;
+        if (Array.isArray(edges) && edges.length > 0) {
+          return edges.map((e: { node: BlogPost }) => e.node);
+        }
+      }
+    } catch (err) {
+      // Continue
     }
   }
 
@@ -146,11 +146,26 @@ export function getCategoryFromPost(post: BlogPost): string {
   }
 
   const titleLower = post.title.toLowerCase();
-  if (titleLower.includes("android") || titleLower.includes("kotlin") || titleLower.includes("compose")) {
+  if (
+    titleLower.includes("android") ||
+    titleLower.includes("kotlin") ||
+    titleLower.includes("compose") ||
+    titleLower.includes("coroutine") ||
+    titleLower.includes("rxjava")
+  ) {
     return "ANDROID";
   }
   if (titleLower.includes("ai") || titleLower.includes("llm") || titleLower.includes("agent")) {
     return "AI";
+  }
+  if (
+    titleLower.includes("web") ||
+    titleLower.includes("browser") ||
+    titleLower.includes("javascript") ||
+    titleLower.includes("html") ||
+    titleLower.includes("css")
+  ) {
+    return "WEB DEV";
   }
   if (titleLower.includes("tool") || titleLower.includes("ksp") || titleLower.includes("kapt")) {
     return "TOOLS";
