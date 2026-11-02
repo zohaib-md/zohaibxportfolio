@@ -57,11 +57,11 @@ export const WebDesignCTA: React.FC = () => {
         </p>
 
         {/* CTA Button */}
-        <div className="mt-7 sm:mt-8">
+        <div className="mt-6 sm:mt-8 w-full sm:w-auto">
           <Link
             href="/design"
             onClick={() => playClick()}
-            className="inline-flex items-center justify-center gap-2 rounded-[16px] border-[3px] border-black bg-black px-[32px] py-[16px] font-display text-[18px] font-medium text-white shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-[14px] sm:rounded-[16px] border-[2.5px] sm:border-[3px] border-black bg-black px-6 sm:px-[32px] py-3.5 sm:py-[16px] font-display text-base sm:text-[18px] font-medium text-white shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] sm:shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all text-center"
           >
             <span>See services &amp; pricing</span>
             <span>&rarr;</span>

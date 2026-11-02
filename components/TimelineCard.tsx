@@ -106,7 +106,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
     <div
       onClick={onToggle}
       style={{ backgroundColor: bgColor }}
-      className="group relative cursor-pointer select-none w-full max-w-[1104px] rounded-[20px] md:rounded-[24px] border-[3.5px] border-black p-6 sm:p-7 md:p-[32px] shadow-[5px_5px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[7px_7px_0_0_#000000] flex flex-col justify-center"
+      className="group relative cursor-pointer select-none w-full max-w-[1104px] rounded-[18px] sm:rounded-[20px] md:rounded-[24px] border-[3px] sm:border-[3.5px] border-black p-4 sm:p-7 md:p-[32px] shadow-[4px_4px_0_0_#000000] sm:shadow-[5px_5px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[7px_7px_0_0_#000000] flex flex-col justify-center"
       role="button"
       tabIndex={0}
       aria-expanded={isExpanded}
@@ -123,33 +123,33 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
         and fixed-size chevron button at top-right.
       */}
       <div className="w-full">
-        <div className="flex items-start justify-between gap-4 w-full">
+        <div className="flex items-start justify-between gap-3 sm:gap-4 w-full">
           <div className="min-w-0 flex-1">
             {/* Company Name */}
-            <h3 className="font-display text-[26px] sm:text-[30px] md:text-[34px] font-extrabold text-black tracking-tight leading-tight">
+            <h3 className="font-display text-xl xs:text-2xl sm:text-[30px] md:text-[34px] font-extrabold text-black tracking-tight leading-tight">
               {title}
             </h3>
 
             {/* Location (plain gray text) */}
-            <p className="mt-1 text-sm sm:text-base font-normal text-neutral-500">
+            <p className="mt-1 text-xs sm:text-base font-normal text-neutral-500">
               {location}
             </p>
 
             {/* Inline Pills: Date-range pill + Project-count pill */}
-            <div className="mt-3 flex items-center gap-2.5 flex-wrap pb-1">
+            <div className="mt-2.5 sm:mt-3 flex items-center gap-2 sm:gap-2.5 flex-wrap pb-1">
               {/* Date-Range Pill: Light Blue Background */}
-              <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#bfdbfe] px-4 sm:px-4.5 py-1 text-xs sm:text-sm font-bold text-black shadow-[2.5px_2.5px_0_0_#000000]">
+              <span className="inline-flex items-center rounded-full border-[2px] sm:border-[2.5px] border-black bg-[#bfdbfe] px-3 sm:px-4.5 py-0.5 sm:py-1 text-xs sm:text-sm font-bold text-black shadow-[2px_2px_0_0_#000000] sm:shadow-[2.5px_2.5px_0_0_#000000]">
                 {displayDatePill}
               </span>
 
               {/* Project-Count Pill: Yellow Background */}
-              <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#fef08a] px-3.5 sm:px-4 py-1 text-xs sm:text-sm font-bold text-black shadow-[2.5px_2.5px_0_0_#000000]">
+              <span className="inline-flex items-center rounded-full border-[2px] sm:border-[2.5px] border-black bg-[#fef08a] px-2.5 sm:px-4 py-0.5 sm:py-1 text-xs sm:text-sm font-bold text-black shadow-[2px_2px_0_0_#000000] sm:shadow-[2.5px_2.5px_0_0_#000000]">
                 {projectCount}
               </span>
             </div>
           </div>
 
-          {/* Fixed-Size Chevron Button (top-right, ~48-52px, never resizes or reflows) */}
+          {/* Fixed-Size Chevron Button (top-right) */}
           <div className="flex-shrink-0">
             <button
               type="button"
@@ -158,7 +158,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                 onToggle();
               }}
               aria-label={isExpanded ? "Collapse" : "Expand"}
-              className="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="flex h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12 items-center justify-center rounded-full border-[2px] sm:border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
               <span
                 ref={companyChevronRef}

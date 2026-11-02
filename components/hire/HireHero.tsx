@@ -112,11 +112,11 @@ export const HireHero: React.FC = () => {
         </div>
 
         {/* H1 Heading */}
-        <h1 className="mt-5 sm:mt-6 flex flex-col items-start font-display text-[36px] sm:text-[50px] md:text-[60px] font-bold text-black tracking-tight leading-[1.1]">
+        <h1 className="mt-5 sm:mt-6 flex flex-col items-start font-display text-[26px] xs:text-[32px] sm:text-[50px] md:text-[60px] font-bold text-black tracking-tight leading-[1.1]">
           <span ref={title1Ref}>Hire a Software &amp;</span>
           <span
             ref={title2Ref}
-            className="mt-2 inline-block rounded-[14px] md:rounded-[18px] border-[3.5px] border-black bg-[#FACC15] px-5 sm:px-7 py-1 sm:py-1.5 text-black shadow-[4.5px_4.5px_0_0_#000000] md:shadow-[5.5px_5.5px_0_0_#000000]"
+            className="mt-2 inline-block rounded-[12px] md:rounded-[18px] border-[2.5px] sm:border-[3.5px] border-black bg-[#FACC15] px-3.5 sm:px-7 py-1 sm:py-1.5 text-black shadow-[3.5px_3.5px_0_0_#000000] md:shadow-[5.5px_5.5px_0_0_#000000] max-w-full"
           >
             AI Systems Engineer
           </span>
@@ -141,11 +141,11 @@ export const HireHero: React.FC = () => {
         {/* Two CTA Buttons */}
         <div
           ref={ctaRef}
-          className="mt-8 sm:mt-10 flex flex-wrap items-center justify-start gap-4 sm:gap-5"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-5 w-full sm:w-auto"
         >
           <a
             href="mailto:zohaibmohammad88@gmail.com?subject=Start%20a%20Project%20Conversation"
-            className="inline-flex items-center justify-center rounded-full border-[2.5px] border-black bg-black px-6 sm:px-8 py-3 text-sm sm:text-base font-display font-bold text-white shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all"
+            className="inline-flex items-center justify-center rounded-full border-[2.5px] border-black bg-black px-6 sm:px-8 py-3 text-sm sm:text-base font-display font-bold text-white shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all text-center"
           >
             Start a Project Conversation
           </a>
@@ -153,7 +153,7 @@ export const HireHero: React.FC = () => {
             href="https://cal.com/mohammad-zohaib-seahzf/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border-[2.5px] border-black bg-white px-6 sm:px-8 py-3 text-sm sm:text-base font-display font-bold text-black shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all"
+            className="inline-flex items-center justify-center rounded-full border-[2.5px] border-black bg-white px-6 sm:px-8 py-3 text-sm sm:text-base font-display font-bold text-black shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all text-center"
           >
             Book a Call
           </a>

@@ -86,7 +86,7 @@ export const CallbackSection: React.FC = () => {
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
                 placeholder="WhatsApp number"
-                className="font-display w-full h-[50px] rounded-[14px] border-[3px] border-black bg-white px-4 py-3 text-base text-black placeholder:text-neutral-400 shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] outline-none focus:translate-x-0.5 focus:translate-y-0.5 focus:shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] transition-all"
+                className="font-display w-full h-[46px] sm:h-[50px] rounded-[14px] border-[2.5px] sm:border-[3px] border-black bg-white px-4 py-2.5 sm:py-3 text-sm sm:text-base text-black placeholder:text-neutral-400 shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] sm:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] outline-none focus:translate-x-0.5 focus:translate-y-0.5 focus:shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] transition-all"
               />
 
               {/* Email address input (optional) */}
@@ -95,13 +95,13 @@ export const CallbackSection: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address (optional)"
-                className="font-display w-full h-[50px] rounded-[14px] border-[3px] border-black bg-white px-4 py-3 text-base text-black placeholder:text-neutral-400 shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] outline-none focus:translate-x-0.5 focus:translate-y-0.5 focus:shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] transition-all"
+                className="font-display w-full h-[46px] sm:h-[50px] rounded-[14px] border-[2.5px] sm:border-[3px] border-black bg-white px-4 py-2.5 sm:py-3 text-sm sm:text-base text-black placeholder:text-neutral-400 shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] sm:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] outline-none focus:translate-x-0.5 focus:translate-y-0.5 focus:shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] transition-all"
               />
 
               {/* Submit button */}
               <button
                 type="submit"
-                className="font-display w-full h-[62px] inline-flex items-center justify-center rounded-[14px] border-[3px] border-black bg-black px-8 py-4 text-[16px] font-bold text-white shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
+                className="font-display w-full h-[52px] sm:h-[62px] inline-flex items-center justify-center rounded-[14px] border-[2.5px] sm:border-[3px] border-black bg-black px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-[16px] font-bold text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] sm:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
               >
                 Request Callback
               </button>

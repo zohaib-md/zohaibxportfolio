@@ -193,27 +193,27 @@ export const SplashScreen: React.FC = () => {
       </div>
 
       {/* Center Group: MZ Logo Tiles + Loading Bar */}
-      <div className="relative z-10 flex flex-col items-center gap-9 sm:gap-11">
+      <div className="relative z-10 flex flex-col items-center gap-7 sm:gap-11 px-4">
         {/* MZ Overlapping Letter Tiles */}
         <div className="flex items-center justify-center relative">
           {/* Tile 1: "M" in Cyan Tile */}
-          <div className="splash-letter-m relative z-10 w-[105px] h-[105px] sm:w-[124px] sm:h-[124px] md:w-[130px] md:h-[130px] rounded-[14px] bg-[#66d9ef] border-[5px] sm:border-[6px] border-black shadow-[9px_9px_0_0_#000000] sm:shadow-[12px_12px_0_0_#000000] flex items-center justify-center -rotate-2 select-none">
-            <span className="font-display font-black text-6xl sm:text-7xl md:text-[82px] text-black tracking-tighter leading-none select-none">
+          <div className="splash-letter-m relative z-10 w-[90px] h-[90px] xs:w-[105px] xs:h-[105px] sm:w-[124px] sm:h-[124px] md:w-[130px] md:h-[130px] rounded-[14px] bg-[#66d9ef] border-[4px] sm:border-[6px] border-black shadow-[6px_6px_0_0_#000000] sm:shadow-[12px_12px_0_0_#000000] flex items-center justify-center -rotate-2 select-none">
+            <span className="font-display font-black text-5xl xs:text-6xl sm:text-7xl md:text-[82px] text-black tracking-tighter leading-none select-none">
               M
             </span>
           </div>
 
           {/* Tile 2: "Z" in Pink Tile (Overlapping on right) */}
-          <div className="splash-letter-z relative z-20 -ml-4 sm:-ml-5 w-[105px] h-[105px] sm:w-[124px] sm:h-[124px] md:w-[130px] md:h-[130px] rounded-[14px] bg-[#ff6b9d] border-[5px] sm:border-[6px] border-black shadow-[9px_9px_0_0_#000000] sm:shadow-[12px_12px_0_0_#000000] flex items-center justify-center rotate-6 select-none">
-            <span className="font-display font-black text-6xl sm:text-7xl md:text-[82px] text-black tracking-tighter leading-none select-none">
+          <div className="splash-letter-z relative z-20 -ml-4 sm:-ml-5 w-[90px] h-[90px] xs:w-[105px] xs:h-[105px] sm:w-[124px] sm:h-[124px] md:w-[130px] md:h-[130px] rounded-[14px] bg-[#ff6b9d] border-[4px] sm:border-[6px] border-black shadow-[6px_6px_0_0_#000000] sm:shadow-[12px_12px_0_0_#000000] flex items-center justify-center rotate-6 select-none">
+            <span className="font-display font-black text-5xl xs:text-6xl sm:text-7xl md:text-[82px] text-black tracking-tighter leading-none select-none">
               Z
             </span>
           </div>
         </div>
 
         {/* Horizontal Loading Bar */}
-        <div className="w-[260px] sm:w-[320px] h-[18px] sm:h-[22px] bg-white border-[3.5px] sm:border-[4px] border-black shadow-[5px_5px_0_0_#000000] sm:shadow-[6px_6px_0_0_#000000] rounded-none overflow-hidden relative">
-          <div className="splash-progress h-full bg-[#ffd93d] relative border-r-[4px] border-black" />
+        <div className="w-[220px] xs:w-[260px] sm:w-[320px] max-w-[85vw] h-[16px] sm:h-[22px] bg-white border-[3px] sm:border-[4px] border-black shadow-[4px_4px_0_0_#000000] sm:shadow-[6px_6px_0_0_#000000] rounded-none overflow-hidden relative">
+          <div className="splash-progress h-full bg-[#ffd93d] relative border-r-[3px] sm:border-r-[4px] border-black" />
         </div>
       </div>
     </div>

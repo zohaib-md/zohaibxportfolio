@@ -73,20 +73,20 @@ export const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#fef3c7] pt-28 pb-16 px-4 sm:px-6 lg:px-8"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#fef3c7] pt-24 sm:pt-28 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8"
     >
       {/* Background Dot Grid Pattern */}
       <div className="absolute inset-0 neo-dot-grid pointer-events-none" />
 
       {/* Confetti Shape 1: Top-Left Blue Rectangle (partially behind navbar) */}
       <div
-        className="confetti-shape absolute left-6 sm:left-10 top-16 w-24 sm:w-28 h-16 sm:h-20 bg-[#60a5fa] border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rounded-none rotate-[1deg] pointer-events-none z-10"
+        className="confetti-shape absolute left-2 sm:left-10 top-16 w-20 sm:w-28 h-14 sm:h-20 bg-[#60a5fa] border-[3px] sm:border-[3.5px] border-black shadow-[4px_4px_0_0_#000000] sm:shadow-[6px_6px_0_0_#000000] rounded-none rotate-[1deg] pointer-events-none z-10"
         aria-hidden="true"
       />
 
       {/* Confetti Shape 2: Top-Right Pink/Magenta Rectangle */}
       <div
-        className="confetti-shape absolute right-6 sm:right-10 top-24 sm:top-28 w-16 sm:w-20 h-24 sm:h-32 bg-[#f472b6] border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] rounded-none rotate-[3.5deg] pointer-events-none z-10"
+        className="confetti-shape absolute right-2 sm:right-10 top-20 sm:top-28 w-14 sm:w-20 h-20 sm:h-32 bg-[#f472b6] border-[3px] sm:border-[3.5px] border-black shadow-[4px_4px_0_0_#000000] sm:shadow-[6px_6px_0_0_#000000] rounded-none rotate-[3.5deg] pointer-events-none z-10"
         aria-hidden="true"
       />
 
@@ -106,7 +106,7 @@ export const Hero: React.FC = () => {
           >
             {/* Washi Tape Strip across top-left corner */}
             <div
-              className="absolute -top-3 left-4 sm:left-6 z-30 pointer-events-none w-28 sm:w-32 h-7 sm:h-8 rounded-[2px] bg-[#fef08a]/85 border-[1.5px] border-black/75 shadow-[1px_1px_0px_0px_rgba(0,0,0,0.15)] rotate-[15deg] flex flex-col justify-center items-center gap-1 overflow-hidden"
+              className="absolute -top-3 left-4 sm:left-6 z-30 pointer-events-none w-24 sm:w-32 h-6 sm:h-8 rounded-[2px] bg-[#fef08a]/85 border-[1.5px] border-black/75 shadow-[1px_1px_0px_0px_rgba(0,0,0,0.15)] rotate-[15deg] flex flex-col justify-center items-center gap-1 overflow-hidden"
               aria-hidden="true"
             >
               {/* Faint horizontal washi tape texture lines */}
@@ -116,7 +116,7 @@ export const Hero: React.FC = () => {
 
             {/* Photo Card with thick black border and hard shadow */}
             <div
-              className="neo-card relative h-72 w-72 sm:h-80 sm:w-80 lg:h-[350px] lg:w-[350px] xl:h-[370px] xl:w-[370px] overflow-hidden rounded-[32px] bg-white border-[3.5px] border-black shadow-[7px_7px_0_0_#000000] z-20"
+              className="neo-card relative h-64 w-64 xs:h-72 xs:w-72 sm:h-80 sm:w-80 lg:h-[350px] lg:w-[350px] xl:h-[370px] xl:w-[370px] max-w-[calc(100vw-3rem)] max-h-[calc(100vw-3rem)] overflow-hidden rounded-[26px] sm:rounded-[32px] bg-white border-[3px] sm:border-[3.5px] border-black shadow-[6px_6px_0_0_#000000] sm:shadow-[7px_7px_0_0_#000000] z-20"
             >
               <Image
                 src={personalData.photo}
@@ -135,7 +135,7 @@ export const Hero: React.FC = () => {
           {/* Eyebrow / Hello Label */}
           <p
             ref={helloRef}
-            className="font-display text-lg text-black mb-1 select-none"
+            className="font-display text-base sm:text-lg text-black mb-1 select-none"
           >
             {personalData.eyebrow}
           </p>
@@ -143,7 +143,7 @@ export const Hero: React.FC = () => {
           {/* H1 Heading: Name with Underline + Highlighter Box */}
           <h1
             ref={titleRef}
-            className="font-display font-bold text-5xl sm:text-6xl lg:text-[70px] text-black leading-tight flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-3"
+            className="font-display font-bold text-4xl xs:text-5xl sm:text-6xl lg:text-[70px] text-black leading-tight flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 mb-3"
           >
             {/* First Name with Yellow Underline */}
             <span className="neo-underline inline-block pb-0.5 text-black">
@@ -151,7 +151,7 @@ export const Hero: React.FC = () => {
             </span>
 
             {/* Last Name inside Blue Highlighter Box */}
-            <span className="inline-block rounded-xl border-[3.5px] border-black bg-[#bfdbfe] px-3.5 py-1 shadow-[4.5px_4.5px_0_0_#000000] text-black">
+            <span className="inline-block rounded-xl border-[3px] sm:border-[3.5px] border-black bg-[#bfdbfe] px-3 sm:px-3.5 py-0.5 sm:py-1 shadow-[3.5px_3.5px_0_0_#000000] sm:shadow-[4.5px_4.5px_0_0_#000000] text-black">
               {personalData.lastName}
             </span>
           </h1>
@@ -159,7 +159,7 @@ export const Hero: React.FC = () => {
           {/* Subheading / Positioning Line */}
           <p
             ref={subtitleRef}
-            className="font-display font-bold text-xl sm:text-2xl text-black leading-snug mb-3 max-w-xl"
+            className="font-display font-bold text-lg xs:text-xl sm:text-2xl text-black leading-snug mb-3 max-w-xl"
           >
             {personalData.title}
           </p>
@@ -167,7 +167,7 @@ export const Hero: React.FC = () => {
           {/* Body Paragraph with bold keywords */}
           <p
             ref={bioRef}
-            className="font-sans text-base sm:text-[17px] text-black leading-relaxed max-w-xl mb-6"
+            className="font-sans text-sm xs:text-base sm:text-[17px] text-black leading-relaxed max-w-xl mb-6"
             dangerouslySetInnerHTML={{ __html: personalData.bioHtml }}
           />
 
@@ -202,7 +202,7 @@ export const Hero: React.FC = () => {
             ref={badgeRef}
             className="pt-1 relative z-20 flex flex-col sm:inline-block items-center"
           >
-            <span className="inline-block rounded-md border-[3px] border-black bg-black px-3.5 py-1 text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white shadow-[3px_3px_0_0_#000000] relative z-20">
+            <span className="inline-block rounded-md border-[2.5px] sm:border-[3px] border-black bg-black px-3 sm:px-3.5 py-1 text-[11px] sm:text-sm font-display font-bold uppercase tracking-wider text-white shadow-[2.5px_2.5px_0_0_#000000] sm:shadow-[3px_3px_0_0_#000000] relative z-20 text-center">
               {personalData.location}
             </span>
 

@@ -1,8 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SplashScreen } from "@/components/SplashScreen";
 import { SoundProvider } from "@/components/providers/SoundProvider";
 import { cn } from "@/lib/utils";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#fef3c7",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mohdzohaib.com"),

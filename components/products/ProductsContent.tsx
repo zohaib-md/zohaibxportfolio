@@ -80,24 +80,24 @@ export const ProductsContent: React.FC = () => {
   return (
     <div ref={containerRef}>
       {/* Page Header (centered, yellow dotted background) */}
-      <section className="relative w-full overflow-hidden bg-[#fef18b] pt-28 sm:pt-36 md:pt-40 pb-14 sm:pb-16 border-b-[3.5px] border-black px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative w-full overflow-hidden bg-[#fef18b] pt-24 sm:pt-36 md:pt-40 pb-12 sm:pb-16 border-b-[3.5px] border-black px-4 sm:px-6 lg:px-8 text-center">
         {/* Background Dot Grid Pattern */}
         <div className="absolute inset-0 neo-dot-grid pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-4xl">
           {/* Small pill badge: "Digital Products" */}
           <div ref={badgeRef} className="flex justify-center">
-            <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#bbf7d0] px-4 py-1 text-xs sm:text-[13px] font-bold text-black shadow-[3px_3px_0_0_#000000]">
+            <span className="inline-flex items-center rounded-full border-[2.5px] border-black bg-[#bbf7d0] px-3.5 sm:px-4 py-1 text-xs sm:text-[13px] font-bold text-black shadow-[2.5px_2.5px_0_0_#000000] sm:shadow-[3px_3px_0_0_#000000]">
               Digital Products
             </span>
           </div>
 
           {/* H2 Title: "Things I Build &" (plain text) + "Sell" (yellow pill box) */}
-          <h1 className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 font-display text-[34px] sm:text-[46px] md:text-[54px] font-bold text-black leading-none tracking-tight">
+          <h1 className="mt-3.5 sm:mt-5 flex flex-wrap items-center justify-center gap-2 sm:gap-3.5 font-display text-[26px] xs:text-[32px] sm:text-[46px] md:text-[54px] font-bold text-black leading-none tracking-tight">
             <span ref={title1Ref}>Things I Build &amp;</span>
             <span
               ref={title2Ref}
-              className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-[#FACC15] px-4 sm:px-5 py-1 sm:py-1.5 text-black shadow-[4px_4px_0_0_#000000] md:shadow-[5px_5px_0_0_#000000]"
+              className="inline-block rounded-[12px] md:rounded-[18px] border-[2.5px] md:border-[3.5px] border-black bg-[#FACC15] px-3.5 sm:px-5 py-1 sm:py-1.5 text-black shadow-[3px_3px_0_0_#000000] md:shadow-[5px_5px_0_0_#000000]"
             >
               Sell
             </span>

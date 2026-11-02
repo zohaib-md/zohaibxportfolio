@@ -111,18 +111,18 @@ export const TimelineSection: React.FC = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="relative w-full overflow-hidden border-t-[2.5px] sm:border-t-[3px] border-b-[3.5px] border-black bg-white py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+      className="relative w-full overflow-hidden border-t-[2.5px] sm:border-t-[3px] border-b-[3.5px] border-black bg-white py-16 sm:py-24 md:py-28 px-3.5 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-[1152px]">
         {/* Section Header */}
-        <div ref={headerRef} className="mb-14 sm:mb-16 md:mb-20 text-center">
-          <h2 className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 font-display text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
+        <div ref={headerRef} className="mb-10 sm:mb-16 md:mb-20 text-center">
+          <h2 className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-display text-[28px] xs:text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
             <span ref={titleExpRef} className="inline-block leading-none">
               Experience
             </span>
             <span
               ref={badgeEduRef}
-              className="inline-block rounded-[14px] md:rounded-[16px] border-[3px] md:border-[3.5px] border-black bg-[#FACC15] text-black shadow-[4px_4px_0_0_#000000] md:shadow-[5px_5px_0_0_#000000] leading-none whitespace-nowrap"
+              className="inline-block rounded-[10px] sm:rounded-[14px] md:rounded-[16px] border-[2.5px] sm:border-[3px] md:border-[3.5px] border-black bg-[#FACC15] text-black shadow-[3px_3px_0_0_#000000] sm:shadow-[4px_4px_0_0_#000000] md:shadow-[5px_5px_0_0_#000000] leading-none whitespace-nowrap"
               style={{ padding: "4px 8px" }}
             >
               &amp; Education
@@ -130,7 +130,7 @@ export const TimelineSection: React.FC = () => {
           </h2>
           <p
             ref={subtitleRef}
-            className="mt-3 sm:mt-4 text-base sm:text-lg text-neutral-500 font-normal"
+            className="mt-2.5 sm:mt-4 text-sm sm:text-lg text-neutral-500 font-normal"
           >
             A journey through my professional growth
           </p>
@@ -140,8 +140,7 @@ export const TimelineSection: React.FC = () => {
         <div className="relative mx-auto max-w-[1152px] w-full">
           {/* Vertical Timeline Rail Line */}
           <div
-            className="timeline-rail-line absolute bottom-[55px] top-[55px] z-0 w-[3px] bg-black"
-            style={{ left: "22.5px" }}
+            className="timeline-rail-line absolute bottom-[45px] sm:bottom-[55px] top-[45px] sm:top-[55px] z-0 w-[2.5px] sm:w-[3px] bg-black left-[15px] sm:left-[22.5px]"
           />
 
           {/* Timeline Entries (40px padding-bottom per row) */}
@@ -152,20 +151,20 @@ export const TimelineSection: React.FC = () => {
               return (
                 <div
                   key={item.id}
-                  className="timeline-item-row relative flex items-start w-full pb-[40px] last:pb-0"
+                  className="timeline-item-row relative flex items-start w-full pb-8 sm:pb-[40px] last:pb-0"
                 >
-                  {/* Left Rail Column: 48px wide with 24px Dot Marker vertically centered on 110px card */}
-                  <div className="relative z-10 flex w-[48px] flex-shrink-0 items-start justify-center pt-[43px]">
+                  {/* Left Rail Column: 32px (mobile) / 48px (desktop) wide with Dot Marker */}
+                  <div className="relative z-10 flex w-[32px] sm:w-[48px] flex-shrink-0 items-start justify-center pt-[32px] sm:pt-[43px]">
                     <button
                       type="button"
                       onClick={() => toggleEntry(item.id)}
                       aria-label={`Toggle ${item.title}`}
                       style={{ backgroundColor: item.dotColor }}
-                      className="h-6 w-6 rounded-full border-[3px] border-black shadow-[3px_3px_0_0_#000000] transition-transform duration-150 hover:scale-110 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                      className="h-5 w-5 sm:h-6 sm:w-6 rounded-full border-[2.5px] sm:border-[3px] border-black shadow-[2px_2px_0_0_#000000] sm:shadow-[3px_3px_0_0_#000000] transition-transform duration-150 hover:scale-110 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                     />
                   </div>
 
-                  {/* Right Column: 1104px Max-Width Card */}
+                  {/* Right Column: Max-Width Card */}
                   <div className="min-w-0 flex-1 max-w-[1104px]">
                     <TimelineCard
                       {...item}

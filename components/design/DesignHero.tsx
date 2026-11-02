@@ -107,17 +107,17 @@ export const DesignHero: React.FC = () => {
         {/* Two CTA Buttons */}
         <div
           ref={ctaRef}
-          className="mt-8 sm:mt-10 flex flex-wrap items-center justify-start gap-3.5 sm:gap-5"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-5 w-full sm:w-auto"
         >
           <a
             href="mailto:zohaibmohammad88@gmail.com?subject=Start%20a%20Project%20Conversation"
-            className="inline-flex items-center justify-center rounded-2xl border-[3px] border-black bg-black px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-display font-bold text-white shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all text-center"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-2xl border-[3px] border-black bg-black px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-display font-bold text-white shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all text-center"
           >
             Start a Project Conversation
           </a>
           <a
             href="mailto:zohaibmohammad88@gmail.com?subject=Inquiry%20via%20Portfolio"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border-[3px] border-black bg-white px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-display font-bold text-black shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all text-center"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl border-[3px] border-black bg-white px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-display font-bold text-black shadow-[4px_4px_0_0_#000000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all text-center"
           >
             <svg
               width="18"

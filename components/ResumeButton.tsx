@@ -50,7 +50,7 @@ export const ResumeButton: React.FC<ResumeButtonProps> = ({
 
       {/* Hand-drawn "Download my Resume" doodle with arrow pointing towards the button */}
       <div
-        className="pointer-events-none mt-2 sm:mt-0 sm:absolute sm:right-[calc(100%-14px)] sm:top-[calc(100%+10px)] w-44 sm:w-52 md:w-56 -ml-12 sm:ml-0 select-none z-20"
+        className="pointer-events-none mt-2 sm:mt-0 sm:absolute sm:right-[calc(100%-14px)] sm:top-[calc(100%+10px)] w-36 sm:w-52 md:w-56 ml-0 select-none z-20"
         aria-hidden="true"
       >
         <img

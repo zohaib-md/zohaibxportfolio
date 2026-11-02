@@ -84,19 +84,19 @@ export const BlogContent: React.FC<BlogContentProps> = ({ posts }) => {
   return (
     <div ref={containerRef}>
       {/* Page Header with Yellow Dotted Background */}
-      <section className="relative w-full overflow-hidden bg-[#fef18b] pt-28 sm:pt-36 md:pt-40 pb-16 sm:pb-20 border-b-[3.5px] border-black px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative w-full overflow-hidden bg-[#fef18b] pt-24 sm:pt-36 md:pt-40 pb-12 sm:pb-20 border-b-[3.5px] border-black px-4 sm:px-6 lg:px-8 text-center">
         {/* Background Dot Grid Pattern */}
         <div className="absolute inset-0 neo-dot-grid pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-4xl">
           {/* H1 Split across two boxes: "Blog" (plain text) + "Posts" (white box) */}
-          <h1 className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 font-display text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
+          <h1 className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-display text-[28px] xs:text-[34px] sm:text-[46px] md:text-[60px] font-bold text-black leading-none tracking-tight">
             <span ref={title1Ref} className="inline-block leading-none">
               Blog
             </span>
             <span
               ref={title2Ref}
-              className="inline-block rounded-[14px] md:rounded-[18px] border-[3px] md:border-[3.5px] border-black bg-white px-5 sm:px-7 py-2 sm:py-3 shadow-[4px_4px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] leading-none"
+              className="inline-block rounded-[12px] md:rounded-[18px] border-[2.5px] md:border-[3.5px] border-black bg-white px-4 sm:px-7 py-1.5 sm:py-3 shadow-[3px_3px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] leading-none"
             >
               Posts
             </span>
@@ -105,7 +105,7 @@ export const BlogContent: React.FC<BlogContentProps> = ({ posts }) => {
           {/* Subhead */}
           <p
             ref={subheadRef}
-            className="mt-3 sm:mt-4 text-base sm:text-lg text-neutral-600 font-normal"
+            className="mt-2.5 sm:mt-4 text-sm sm:text-lg text-neutral-600 font-normal"
           >
             Thoughts on development, design, and building products
           </p>

@@ -32,7 +32,7 @@ const Highlight: React.FC<HighlightProps> = ({
   indexInParagraph,
 }) => {
   return (
-    <span className="relative inline-block px-1.5 py-0.5 mx-0.5 font-bold text-black align-baseline select-text isolate">
+    <span className="relative inline-block px-1.5 py-0.5 mx-0.5 font-bold text-black align-baseline select-text isolate max-w-full break-words">
       {/* Highlighter Pen Fill Box */}
       <span
         data-direction={direction}
@@ -145,21 +145,21 @@ export const AboutSection: React.FC = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#fef3c7] pt-8 sm:pt-10 pb-20 sm:pb-24 md:pb-28 px-4 sm:px-6 lg:px-8"
+      className="relative w-full overflow-hidden bg-[#fef3c7] pt-8 sm:pt-10 pb-16 sm:pb-24 md:pb-28 px-3.5 sm:px-6 lg:px-8"
     >
       {/* Background Dot Grid Pattern */}
       <div className="absolute inset-0 neo-dot-grid pointer-events-none" />
 
       {/* Subtle decorative tape sticker in top-right area */}
       <div
-        className="absolute right-6 sm:right-12 top-6 sm:top-8 w-14 sm:w-16 h-8 sm:h-10 bg-[#fde047] border-[2px] border-black/80 shadow-[2px_2px_0_0_rgba(0,0,0,0.35)] rotate-[-8deg] pointer-events-none z-10"
+        className="absolute right-4 sm:right-12 top-6 sm:top-8 w-12 sm:w-16 h-7 sm:h-10 bg-[#fde047] border-[2px] border-black/80 shadow-[2px_2px_0_0_rgba(0,0,0,0.35)] rotate-[-8deg] pointer-events-none z-10"
         aria-hidden="true"
       />
 
       <div className="relative z-20 mx-auto max-w-[1152px]">
         {/* Top-Left Aligned Heading Label */}
         <div className="mb-4 sm:mb-5">
-          <span className="inline-block rounded-[4px] border-[3.5px] sm:border-[4px] border-black bg-[#ffd93d] px-4 py-1.5 sm:px-5 sm:py-2 font-display font-black text-xl sm:text-2xl tracking-tight text-black shadow-[4px_4px_0_0_#000000] sm:shadow-[5px_5px_0_0_#000000] leading-none select-none">
+          <span className="inline-block rounded-[4px] border-[3px] sm:border-[4px] border-black bg-[#ffd93d] px-3.5 py-1 sm:px-5 sm:py-2 font-display font-black text-lg sm:text-2xl tracking-tight text-black shadow-[3px_3px_0_0_#000000] sm:shadow-[5px_5px_0_0_#000000] leading-none select-none">
             ABOUT
           </span>
         </div>
@@ -167,9 +167,9 @@ export const AboutSection: React.FC = () => {
         {/* Large White Neo-Brutalist Content Card */}
         <div
           ref={cardRef}
-          className="rounded-none border-[3.5px] sm:border-[4px] border-black bg-white p-6 sm:p-10 md:p-14 lg:p-16 shadow-[8px_8px_0_0_#000000] sm:shadow-[10px_10px_0_0_#000000] md:shadow-[12px_12px_0_0_#000000]"
+          className="rounded-none border-[3px] sm:border-[4px] border-black bg-white p-5 sm:p-10 md:p-14 lg:p-16 shadow-[5px_5px_0_0_#000000] sm:shadow-[10px_10px_0_0_#000000] md:shadow-[12px_12px_0_0_#000000]"
         >
-          <div className="space-y-6 sm:space-y-8 md:space-y-9 text-[16px] sm:text-[18px] md:text-[19px] leading-relaxed sm:leading-[1.9] md:leading-[2.1] text-black font-normal">
+          <div className="space-y-5 sm:space-y-8 md:space-y-9 text-[15px] sm:text-[18px] md:text-[19px] leading-relaxed sm:leading-[1.9] md:leading-[2.1] text-black font-normal">
             {/* Paragraph 1: Left-to-Right sweep */}
             <p className="about-paragraph">
               I am an Information Technology undergraduate pursuing my B.Tech, with a focus on{" "}

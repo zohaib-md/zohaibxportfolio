@@ -79,7 +79,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div
       onClick={onToggle}
-      className="group relative cursor-pointer select-none w-full max-w-[1104px] rounded-[20px] md:rounded-[24px] border-[3.5px] border-black bg-white p-6 sm:p-7 md:p-[32px] shadow-[5px_5px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[7px_7px_0_0_#000000] flex flex-col justify-center"
+      className="group relative cursor-pointer select-none w-full max-w-[1104px] rounded-[18px] sm:rounded-[20px] md:rounded-[24px] border-[3px] sm:border-[3.5px] border-black bg-white p-4 sm:p-7 md:p-[32px] shadow-[4px_4px_0_0_#000000] sm:shadow-[5px_5px_0_0_#000000] md:shadow-[6px_6px_0_0_#000000] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[7px_7px_0_0_#000000] flex flex-col justify-center"
       role="button"
       tabIndex={0}
       aria-expanded={isExpanded}
@@ -92,26 +92,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {/* HEADER ROW (Permanent: Icon + Title/Badge + Plain Tech + Fixed Chevron) */}
       <div className="w-full">
-        <div className="flex items-center justify-between gap-4 w-full">
+        <div className="flex items-center justify-between gap-3 sm:gap-4 w-full">
           {/* Left: Thumbnail + Info */}
-          <div className="flex items-center gap-3.5 sm:gap-4 md:gap-5 min-w-0 flex-1">
+          <div className="flex items-center gap-2.5 sm:gap-4 md:gap-5 min-w-0 flex-1">
             {/* Project Monogram / Thumbnail */}
             <div
               style={{ backgroundColor: project.accentBg || "#F3F4F6" }}
-              className="flex-shrink-0 h-12 w-12 sm:h-14 sm:w-14 md:h-[56px] md:w-[56px] rounded-[12px] sm:rounded-[14px] border-[2.5px] border-black flex items-center justify-center font-display font-black text-base sm:text-lg text-black shadow-[2px_2px_0_0_#000000]"
+              className="flex-shrink-0 h-10 w-10 sm:h-14 sm:w-14 md:h-[56px] md:w-[56px] rounded-[10px] sm:rounded-[14px] border-[2px] sm:border-[2.5px] border-black flex items-center justify-center font-display font-black text-sm sm:text-lg text-black shadow-[2px_2px_0_0_#000000]"
             >
               {project.monogram}
             </div>
 
             {/* Info: Title + Year Badge + Tech Summary */}
             <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
-                <h3 className="font-display text-lg sm:text-xl md:text-[24px] font-extrabold text-black tracking-tight leading-tight">
+              <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <h3 className="font-display text-base sm:text-xl md:text-[24px] font-extrabold text-black tracking-tight leading-tight">
                   {project.title}
                 </h3>
 
                 {/* Mint/Light-Green Year Pill Badge */}
-                <span className="inline-flex items-center rounded-full border-[2px] border-black bg-[#bbf7d0] px-3 sm:px-3.5 py-0.5 text-xs sm:text-[13px] font-bold text-black shadow-[2px_2px_0_0_#000000]">
+                <span className="inline-flex items-center rounded-full border-[2px] border-black bg-[#bbf7d0] px-2.5 sm:px-3.5 py-0.5 text-xs sm:text-[13px] font-bold text-black shadow-[1.5px_1.5px_0_0_#000000] sm:shadow-[2px_2px_0_0_#000000]">
                   {project.year}
                 </span>
               </div>
@@ -123,7 +123,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           </div>
 
-          {/* Right: Fixed-Size Circular Chevron Toggle Button (48px, never resizes) */}
+          {/* Right: Fixed-Size Circular Chevron Toggle Button */}
           <div className="flex-shrink-0">
             <button
               type="button"
@@ -132,7 +132,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 onToggle();
               }}
               aria-label={isExpanded ? "Collapse project" : "Expand project"}
-              className="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="flex h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12 items-center justify-center rounded-full border-[2px] sm:border-[2.5px] border-black bg-white shadow-[2px_2px_0_0_#000000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
               <span
                 ref={chevronRef}

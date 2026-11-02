@@ -7,24 +7,24 @@ import { BookACallLink } from "@/components/get-in-touch";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative w-full bg-[#0F0F0F] text-white border-t-[3.5px] border-black pt-16 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <footer className="relative w-full bg-[#0F0F0F] text-white border-t-[3.5px] border-black pt-12 sm:pt-20 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="mx-auto max-w-[1280px]">
         {/* Main 3-Column Layout */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-12 pb-12 sm:pb-16">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10 lg:gap-12 pb-10 sm:pb-16">
           {/* Column 1 (Left, ~35% width): Name pill pair, role, location */}
           <div className="w-full lg:w-[35%] flex flex-col items-start">
-            {/* Name Pill Pair (same style as nav: first in white pill with black border, last in black pill with yellow text and subtle yellow border) */}
-            <div className="flex items-center gap-2 select-none">
-              <span className="badge badge-lg h-auto py-1.5 px-3.5 bg-white text-black font-display font-extrabold text-base sm:text-lg border-[2.5px] border-black rounded-xl shadow-[3px_3px_0_0_#000000]">
+            {/* Name Pill Pair */}
+            <div className="flex items-center gap-1.5 sm:gap-2 select-none">
+              <span className="badge badge-lg h-auto py-1 px-3 sm:py-1.5 sm:px-3.5 bg-white text-black font-display font-extrabold text-sm sm:text-lg border-[2px] sm:border-[2.5px] border-black rounded-lg sm:rounded-xl shadow-[2px_2px_0_0_#000000] sm:shadow-[3px_3px_0_0_#000000]">
                 {personalData.firstName}
               </span>
-              <span className="badge badge-lg h-auto py-1.5 px-3.5 bg-black text-[#FACC15] font-display font-extrabold text-base sm:text-lg border-[2px] border-[#FACC15]/60 rounded-xl shadow-[3px_3px_0_0_rgba(250,204,21,0.2)]">
+              <span className="badge badge-lg h-auto py-1 px-3 sm:py-1.5 sm:px-3.5 bg-black text-[#FACC15] font-display font-extrabold text-sm sm:text-lg border-[2px] border-[#FACC15]/60 rounded-lg sm:rounded-xl shadow-[2px_2px_0_0_rgba(250,204,21,0.2)] sm:shadow-[3px_3px_0_0_rgba(250,204,21,0.2)]">
                 {personalData.lastName}
               </span>
             </div>
 
             {/* Role line (white text) */}
-            <p className="mt-4 font-display text-base sm:text-lg font-bold text-white tracking-tight">
+            <p className="mt-3 sm:mt-4 font-display text-sm sm:text-lg font-bold text-white tracking-tight">
               Software Engineer · AI &amp; Frontend Design
             </p>
 
