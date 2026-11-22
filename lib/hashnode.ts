@@ -55,65 +55,83 @@ const PUBLICATION_QUERY = `
   }
 `;
 
+const HASHNODE_TIMEOUT_MS = 8_000;
+
+type GraphQLResponse = {
+  data?: Record<string, unknown>;
+  errors?: { message?: string }[];
+};
+
+async function queryHashnode(
+  endpoint: string,
+  query: string,
+  variables: Record<string, string>,
+): Promise<GraphQLResponse | null> {
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ query, variables }),
+      cache: "no-store",
+      // Without a deadline a stalled upstream hangs the whole blog page,
+      // which is rendered dynamically on every request.
+      signal: AbortSignal.timeout(HASHNODE_TIMEOUT_MS),
+    });
+
+    if (!res.ok) {
+      console.warn(`[hashnode] ${endpoint} responded ${res.status} ${res.statusText}`);
+      return null;
+    }
+
+    const json = (await res.json()) as GraphQLResponse;
+
+    if (json.errors?.length) {
+      const messages = json.errors.map((e) => e.message ?? "unknown").join("; ");
+      console.warn(`[hashnode] ${endpoint} returned GraphQL errors: ${messages}`);
+      return null;
+    }
+
+    return json;
+  } catch (err) {
+    const reason = err instanceof Error ? err.message : String(err);
+    console.warn(`[hashnode] ${endpoint} request failed: ${reason}`);
+    return null;
+  }
+}
+
+function edgesFrom(json: GraphQLResponse | null, root: "user" | "publication"): BlogPost[] {
+  const node = json?.data?.[root] as
+    | { posts?: { edges?: { node: BlogPost }[] } }
+    | null
+    | undefined;
+
+  const edges = node?.posts?.edges;
+  if (!Array.isArray(edges)) return [];
+
+  return edges.map((e) => e.node);
+}
+
 export async function getHashnodePosts(): Promise<BlogPost[]> {
   const host = process.env.HASHNODE_HOST || "mzohaib.hashnode.dev";
   const username = process.env.HASHNODE_USERNAME || "mzohaib78";
   const endpoints = ["https://gql-beta.hashnode.com", "https://gql.hashnode.com"];
 
-  // 1. Try user posts query first (reliable and doesn't require Hashnode Pro)
+  // 1. Try user posts first (reliable and doesn't require Hashnode Pro)
   for (const endpoint of endpoints) {
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          query: USER_POSTS_QUERY,
-          variables: { username },
-        }),
-        cache: "no-store",
-      });
-
-      if (res.ok) {
-        const json = await res.json();
-        const edges = json.data?.user?.posts?.edges;
-        if (Array.isArray(edges) && edges.length > 0) {
-          return edges.map((e: { node: BlogPost }) => e.node);
-        }
-      }
-    } catch (err) {
-      // Continue to next endpoint or publication query
-    }
+    const posts = edgesFrom(await queryHashnode(endpoint, USER_POSTS_QUERY, { username }), "user");
+    if (posts.length > 0) return posts;
   }
 
-  // 2. Fallback to publication query
+  // 2. Fall back to the publication query
   for (const endpoint of endpoints) {
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          query: PUBLICATION_QUERY,
-          variables: { host },
-        }),
-        cache: "no-store",
-      });
-
-      if (res.ok) {
-        const json = await res.json();
-        const edges = json.data?.publication?.posts?.edges;
-        if (Array.isArray(edges) && edges.length > 0) {
-          return edges.map((e: { node: BlogPost }) => e.node);
-        }
-      }
-    } catch (err) {
-      // Continue
-    }
+    const posts = edgesFrom(
+      await queryHashnode(endpoint, PUBLICATION_QUERY, { host }),
+      "publication",
+    );
+    if (posts.length > 0) return posts;
   }
 
   return [];
