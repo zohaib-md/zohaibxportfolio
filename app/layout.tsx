@@ -195,9 +195,17 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-[#fef3c7]">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#fef18b] focus:text-black focus:border-2 focus:border-black focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:font-bold focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <SoundProvider>
           <SplashScreen />
-          {children}
+          <div id="main-content" tabIndex={-1} className="outline-none">
+            {children}
+          </div>
         </SoundProvider>
       </body>
     </html>
